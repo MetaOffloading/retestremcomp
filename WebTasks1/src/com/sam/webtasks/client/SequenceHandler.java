@@ -66,9 +66,29 @@ public class SequenceHandler {
 			 * The code here defines the main sequence of events in the experiment *
 			 **********************************************************************/
 			case 1:
-				ClickPage.Run(Instructions.Get(0), "Next");
+				ClickPage.Run("Here's a practice trial",  "Next");
 				break;
 			case 2:
+				IOtask2Block block1 = new IOtask2Block();
+				
+				block1.totalCircles = 15;
+				block1.nTargets = 5;
+				
+				block1.Run();
+				break;
+			case 3:
+				ClickPage.Run("Here's the full block",  "Next");
+				break;
+			case 4:
+				IOtask2Block block2 = new IOtask2Block();
+				
+				block2.totalCircles = 15;
+				block2.nTargets = 5;
+				block2.standard13block = true;
+				
+				block2.Run();
+				break;
+			case 5:
 				Finish.Run();
 				break;
 			}

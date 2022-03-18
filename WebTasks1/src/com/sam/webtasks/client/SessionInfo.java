@@ -13,7 +13,7 @@ public class SessionInfo {
 	public static int experimentType = Names.EXPERIMENT_STANDALONE;
 	
 	//what is the name for this experiment?
-	public static String experimentCode="EmptyProject";
+	public static String experimentCode="AnnikaDemo";
 	
 	//which version of the experiment is this?
 	public static int experimentVersion=1;

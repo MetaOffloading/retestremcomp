@@ -214,10 +214,10 @@ public class IOtask2Block {
 		if (standard13block) {
 			nTrials=13;
 			
-			// 17 trials is the standard number of trials for 4 of each forced condition
-			// plus 9 choice trials
+			// 13 trials is the standard number of trials for 3 of each forced condition
+			// plus 7 choice trials
 
-			// first set up and shuffle the 9 choice values
+			// first set up and shuffle the 7 choice values
 			ArrayList<Integer> choiceValues = new ArrayList<Integer>();
 
 			// add numbers 2-8
@@ -225,7 +225,7 @@ public class IOtask2Block {
 				choiceValues.add(i);
 			}
 
-			// now shuffle
+			// now shuffle so that they come in a random sequence
 			for (int i = 0; i < choiceValues.size(); i++) {
 				Collections.swap(choiceValues, i, Random.nextInt(choiceValues.size()));
 			}
