@@ -53,6 +53,7 @@ import com.sam.webtasks.perceptualTask.PerceptBlock;
 import com.sam.webtasks.timeBasedOffloading.TimeBlock;
 import com.sam.webtasks.iotask2.IOtask2InitialiseTrial;
 import com.sam.webtasks.iotask2.IOtask2PreTrial;
+import com.sam.webtasks.iotask2.IOtask2ChoiceOverwrite;
 
 public class SequenceHandler {
 	public static void Next() {	
@@ -66,29 +67,84 @@ public class SequenceHandler {
 			 * The code here defines the main sequence of events in the experiment *
 			 **********************************************************************/
 			case 1:
-				ClickPage.Run("Here's a practice trial",  "Next");
+				ClickPage.Run(Instructions.Get(0), "Next");
 				break;
 			case 2:
+				ClickPage.Run(Instructions.Get(1), "Next");
+				break;				
+			case 3:
 				IOtask2Block block1 = new IOtask2Block();
 				
-				block1.totalCircles = 15;
-				block1.nTargets = 5;
+				block1.totalCircles = 10;
+				block1.nTargets = 0;
 				
 				block1.Run();
 				break;
-			case 3:
-				ClickPage.Run("Here's the full block",  "Next");
-				break;
 			case 4:
+				ClickPage.Run(Instructions.Get(2), "Next");
+				break;
+			case 5:
 				IOtask2Block block2 = new IOtask2Block();
 				
-				block2.totalCircles = 15;
-				block2.nTargets = 5;
-				block2.standard13block = true;
+				block2.totalCircles = 10;
+				block2.nTargets = 3;
+				block2.offloadCondition = Names.REMINDERS_NOTALLOWED;
 				
 				block2.Run();
 				break;
-			case 5:
+			case 6:
+				ClickPage.Run(Instructions.Get(3), "Next");
+				break;
+			case 7:
+				IOtask2Block block3 = new IOtask2Block();
+				
+				block3.totalCircles = 15;
+				block3.nTargets = 7;
+				block3.offloadCondition = Names.REMINDERS_NOTALLOWED;
+				
+				block3.Run();
+				break;
+			case 8:
+				Slider.Run(Instructions.Get(4), "0%", "100%");
+			break;
+			case 9:
+				ClickPage.Run(Instructions.Get(5), "Next");
+				break;
+			case 10:
+				IOtask2Block block4 = new IOtask2Block();
+				
+				block4.totalCircles = 15;
+				block4.nTargets = 7;
+				block4.offloadCondition = Names.REMINDERS_MANDATORY_TARGETONLY;
+				
+				block4.Run();
+				break;	
+			case 11:
+				ClickPage.Run(Instructions.Get(6), "Next");
+				break;
+			case 12:
+				IOtask2Block block5 = new IOtask2Block();
+				
+				block5.totalCircles = 15;
+				block5.nTargets = 7;
+				block5.targetValues.add(1);
+				
+				block5.Run();
+				break;				
+			case 13:
+				ClickPage.Run(Instructions.Get(7), "Next");
+				break;
+			case 14:
+				IOtask2Block block6 = new IOtask2Block();
+				
+				block6.totalCircles = 15;
+				block6.nTargets = 7;
+				block6.standard24block = true;
+				block6.updateProgressText = true;
+				
+				block6.Run();
+				break;
+			case 15:
 				Finish.Run();
 				break;
 			}
@@ -207,7 +263,7 @@ public class SequenceHandler {
 			case 2:
 				IOtask2InitialiseTrial.Run();
 				break;
-			case 3:;
+			case 3:
 				//present the pre-trial choice if appropriate
 				if (IOtask2BlockContext.currentTargetValue() > -1) {
 					IOtask2PreTrial.Run();
@@ -221,6 +277,13 @@ public class SequenceHandler {
 				}
 				break;
 			case 4:
+				if (IOtask2BlockContext.getContext().standard24block == true) {
+					IOtask2ChoiceOverwrite.Run();
+				}  else {
+					SequenceHandler.Next();
+				}
+				break;
+			case 5:
 				if (IOtask2BlockContext.getNTrials() == -1) { //if nTrials has been set to -1, we quit before running
 					SequenceHandler.SetLoop(0,  false);
 					SequenceHandler.Next();
@@ -229,10 +292,10 @@ public class SequenceHandler {
 					IOtask2RunTrial.Run();
 				}
 				break;
-			case 5:
+			case 6:
 				IOtask2PostTrial.Run();
 				break;
-			case 6:
+			case 7:
 				//we have reached the end, so we need to restart the loop
 				SequenceHandler.SetLoop(3,  true);
 				SequenceHandler.Next();

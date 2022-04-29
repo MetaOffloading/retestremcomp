@@ -1,6 +1,7 @@
 package com.sam.webtasks.iotask2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 import com.google.gwt.user.client.Random;
@@ -25,6 +26,9 @@ public class IOtask2Block {
 	// run a standard 9-trial block?
 	public boolean standard9block = false;
 	
+	// run a standard 24-trial block?
+	public boolean standard24block = false;
+	
 	// reverse the order of the forced internal/external trials?
 	public boolean reverseForcedOrder = false;
 	
@@ -39,6 +43,9 @@ public class IOtask2Block {
 	
 	// update the progress bar with progress through the block? 
 	public boolean updateProgress = false;
+	
+	// update the progress text throughout the block? 
+	public boolean updateProgressText = false;
 
 	// allow any circle to be moved? NB this will be overridden by participants'
 	// choice to use reminders or not, if this choice is presented
@@ -80,6 +87,9 @@ public class IOtask2Block {
 
 	// target values
 	public ArrayList<Integer> targetValues = new ArrayList<Integer>();
+	
+	// overwriteChoice values (0 no, or rather go with choice, 1 FI, 2 FE)
+	public ArrayList<Integer> overwriteChoice = new ArrayList<Integer>();
 	
 	// do different target directions have variable numbers of points?
 	public boolean variablePoints = false;
@@ -333,6 +343,45 @@ public class IOtask2Block {
 			targetValues.add(choiceValues.get(7));
 			targetValues.add(forcedB);
 			targetValues.add(choiceValues.get(8));
+		}
+		
+		if (standard24block) {
+			nTrials=24;
+			
+			// 24 trials is the standard number of trials for 8 of each forced condition
+			// plus 8 additional choice trials (but all 24 trials start with choices)
+
+			// first set up and shuffle the 8 choice values
+			ArrayList<Integer> choiceValues = new ArrayList<Integer>();
+			ArrayList<Integer> condValues = new ArrayList<Integer>();
+			
+			// add numbers 2-9 and do this 3 times; also add the condition values (0-2)
+			for (int i = 2; i < 10; i++) {
+				choiceValues.add(i);
+				condValues.add(0);
+			}
+			for (int i = 2; i < 10; i++) {
+				choiceValues.add(i);
+				condValues.add(1);
+			}
+			for (int i = 2; i < 10; i++) {
+				choiceValues.add(i);
+				condValues.add(2);
+			}
+
+			// now shuffle so that they come in a random sequence
+			for (int i = 0; i < 24; i++) {
+				int whereto =  Random.nextInt(choiceValues.size());
+				Collections.swap(choiceValues, i, whereto);
+				Collections.swap(condValues, i, whereto);
+			}
+
+			// now put the whole list of target values together
+			for (int i = 0; i < 24; i++) {
+				targetValues.add(choiceValues.get(i));
+				overwriteChoice.add(condValues.get(i));
+			}
+			
 		}
 		
 		if (onlyChoiceTrials) {

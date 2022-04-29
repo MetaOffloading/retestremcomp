@@ -79,8 +79,14 @@ public class IOtask2PreTrial {
 			    + IOtask2BlockContext.maxPoints() + " points.";
 			}
 			
-			displayString = displayString + "<br><br>You have a choice for what happens when you remember. "
-					+ "Please click the option that you prefer.";
+			if (IOtask2BlockContext.getUpdateProgressText() == true & IOtask2BlockContext.getContext().standard24block == true) {
+				displayString = displayString + "<br><br>You have a choice for what happens when you remember.<br><br>"
+						+ "Please click the option that you prefer to continue with block " 
+						+ (IOtask2BlockContext.getTrialNum()+1) + " out of 24.";
+			} else {
+				displayString = displayString + "<br><br>You have a choice for what happens when you remember. "
+						+ "Please click the option that you prefer.";
+			}
 		}
 
 		displayText.setHTML(displayString);

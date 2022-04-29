@@ -40,6 +40,11 @@ public class IOtask2BlockContext {
 	public static boolean getUpdateProgress() {
 		return (blockContext.updateProgress);
 	}
+	
+	//update progress label?
+	public static boolean getUpdateProgressText() {
+		return (blockContext.updateProgressText);
+	}
 
 	// find out the current total number of points
 	public static int getTotalPoints() {
@@ -120,6 +125,11 @@ public class IOtask2BlockContext {
 	// what is the target value for the current trial?
 	public static int currentTargetValue() {
 		return (blockContext.targetValues.get(blockContext.currentTrial));
+	}
+	
+	// what is the trial type for the current trial, are choices to be overwritten?
+	public static int currentOverwriteChoice() {
+		return (blockContext.overwriteChoice.get(blockContext.currentTrial));
 	}
 
 	// what is the maximum number of points (i.e. for targets in the no reminder
