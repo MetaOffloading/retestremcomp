@@ -106,11 +106,14 @@ public class SequenceHandler {
 				break;
 			case 8:
 				Slider.Run(Instructions.Get(4), "0%", "100%");
-			break;
+				break;
 			case 9:
-				ClickPage.Run(Instructions.Get(5), "Next");
+				PHP.logData("slider1", ""+Slider.getSliderValue(), true);
 				break;
 			case 10:
+				ClickPage.Run(Instructions.Get(5), "Next");
+				break;
+			case 11:
 				IOtask2Block block4 = new IOtask2Block();
 				
 				block4.totalCircles = 15;
@@ -119,10 +122,10 @@ public class SequenceHandler {
 				
 				block4.Run();
 				break;	
-			case 11:
+			case 12:
 				ClickPage.Run(Instructions.Get(6), "Next");
 				break;
-			case 12:
+			case 13:
 				IOtask2Block block5 = new IOtask2Block();
 				
 				block5.totalCircles = 15;
@@ -131,10 +134,10 @@ public class SequenceHandler {
 				
 				block5.Run();
 				break;				
-			case 13:
+			case 14:
 				ClickPage.Run(Instructions.Get(7), "Next");
 				break;
-			case 14:
+			case 15:
 				IOtask2Block block6 = new IOtask2Block();
 				
 				block6.totalCircles = 15;
@@ -144,7 +147,17 @@ public class SequenceHandler {
 				
 				block6.Run();
 				break;
-			case 15:
+			case 16:
+				// log data and check that it saves
+				String data = TimeStamp.Now() + ",";
+				data = data + SessionInfo.participantID + ",";
+				data = data + SessionInfo.gender + ",";
+				data = data + SessionInfo.age;
+
+				PHP.UpdateStatus("finished");
+				PHP.logData("finish", data, true);
+				break;
+			case 17:
 				Finish.Run();
 				break;
 			}
