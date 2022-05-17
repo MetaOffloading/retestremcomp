@@ -70,7 +70,7 @@ public class IOtask2PreTrial {
 			
 			displayString = displayString + "<br><br>Please click the button below to start.";
 		} else {
-			displayString = displayString + "This time you must make a decision.<br><br>";
+			displayString = displayString + "Please indicate your decision.<br><br>";
 					
 			if (IOtask2BlockContext.getRewardFrame() == Names.GAIN_FRAME) {
 				displayString = displayString + "If you forget a special circle, you will not score any points.";

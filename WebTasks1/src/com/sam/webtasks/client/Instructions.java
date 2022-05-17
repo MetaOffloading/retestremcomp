@@ -1,5 +1,6 @@
 package com.sam.webtasks.client;
 
+import com.google.gwt.user.client.ui.HTML;
 import com.sam.webtasks.basictools.Counterbalance;
 import com.sam.webtasks.iotask2.IOtask2BlockContext;
 
@@ -12,19 +13,16 @@ public class Instructions {
 		case 0:
             i = "Thank you for taking part in this experiment. You may "
                     + "only participate in this experiment if you have followed  "
-                    + "the link from the Amazon Mechanical Turk website. You "
+                    + "the link from the Prolific website. You "
                     + "will not receive any compensation otherwise."
                     + "<br><br>Please close any programs "
                     + "that could cause distraction (e.g. email clients) and "
                     + "maximise the size of this window.<br><br>This experiment will take "
-                    + "approximately XX minutes. Please only continue when you think "
-                    + "you will be free from distractions for the next XX minutes.<br><br>"
+                    + "approximately 40 minutes. Please only continue when you think "
+                    + "you will be free from distractions for the next 40 minutes.<br><br>"
                     + "As compensation for completing "
-                    + "this experiment, you will receive payment from the Amazon Mechanical Turk "
-                    + "system, which will be sent within 24 hours of completing the "
-                    + "experiment. At the end of the experiment you will receive a survey code, which "
-                    + "you must paste into the Amazon Mechanical Turk window in order to receive "
-                    + "payment.<br><br>You may withdraw at any time without penalty, simply by "
+                    + "this experiment, you will receive £5 via the Prolific "
+                    + "system.<br><br>You may withdraw at any time without penalty, simply by "
                     + "closing your browser window. If you are having difficulty "
                     + "running the experiment we recommend that you try using Google "
                     + "Chrome. Unfortunately the experiment may not be compatible with all "
@@ -97,7 +95,7 @@ public class Instructions {
         			+ "thought you would earn more points by setting reminders and scoring 5 points for "
         			+ "each special circle, you should choose this option. But if you thought you would "
         			+ "score more points by just using your own memory and earning 10 points for each special "
-        			+ "circle, you should choose this option instead. When you are presented with a choice like this,"
+        			+ "circle, you should choose this option instead. When you are presented with a choice like this, "
         			+ "it is completely up to you. You should do whatever you think will allow you to score the highest number of points.<br><br>"
         			+ "Click below to complete one last practice block.";
             break;            
@@ -113,6 +111,19 @@ public class Instructions {
                     + "happens and carefully follow the instructions.<br><br>"
                     + "You can start the main experiment when you are ready.";
             break;
+        case 8:
+			i = "You have now completed the experiment. Thank you for taking part.<br><br>"
+					+ "In the present study we tried to understand how people choose to set "
+					+ "reminders. Previous studies have shown that the simple act of "
+					+ "using a reminder may improve our memory for subsequent information. "
+					+ "In this study, we want to study the cognitive mechanisms behind "
+					+ "this phenomenon. In particular, we are interested in understanding "
+					+ "how confidence in your own memory might guide your decision to ask for "
+					+ "a reminder.<br><br>"
+					+ "Please click on the link below to receive your payment:<br><br>"
+					+ "<b><a href=\"https://app.prolific.co/submissions/complete?cc=4DC3A396\">"
+					+ "CLICK HERE</a></b>";
+			break;
 		}
 
 		return(i);	
@@ -125,15 +136,15 @@ public class Instructions {
                 + "want to take part, please read the following information carefully and "
                 + "discuss it with others if you wish. Ask us if there is anything that "
                 + "is not clear or you would like more information.<br><br>"
-                + "We are recruiting volunteers from the Amazon Mechanical Turk website to "
+                + "We are recruiting volunteers from the Prolific website to "
                 + "take part in an experiment aiming to improve our understanding of human "
                 + "attention and memory. You will see various objects on the screen like coloured, numbered circles, "
                 + "and you will be asked to move them with your computer mouse. Sometimes you will be asked to remember "
                 + "particular numbers and move the corresponding circle in a particular direction. You will be asked how "
                 + "confident you are in your ability to solve the task. "
                 + "The experiment "
-                + "will last approximately XX minutes and you will receive a payment of $XX plus an additional bonus via the "
-                + "Amazon Mechanical Turk payment system. There are no anticipated risks or "
+                + "will last approximately 40 minutes and you will receive a payment of £5 via the"
+                + "Prolific payment system. There are no anticipated risks or "
                 + "benefits associated with participation in this study.<br><br>"
                 + "It is up to you to decide whether or not to take part. If you choose "
                 + "not to participate, you won't incur any penalties or lose any "
@@ -146,14 +157,15 @@ public class Instructions {
                 + "<br><br>All data will be collected and stored in accordance with the General Data Protection "
                 + "Regulations 2018. Personal information is stored separately from test results, and researchers "
                 + "on this project have no access to this data. Your personal information such as name and email "
-                + "address is held by Amazon Mechanical Turk but the researchers on this project have no acccess "
+                + "address is held by Prolific but the researchers on this project have no acccess "
                 + "to this. Data from this experiment may be made available to the research community, for example by "
                 + "posting them on websites such as the Open Science Framework (<a href=\"http://osf.io\">http://osf.io</a>). "
                 + "It will not be possible to identify you from these data.<br><br>"
                 + "We aim to publish the results of this project in scientific journals and book chapters. Copies of the "
                 + "results can either be obtained directly from the scientific journals' websites or from us.<br><br>"
-                + "Should you wish to raise a complaint, please contact the Principal Investigator of this project, "
-                + "Dr Annika Boldt(<a href=\"mailto:a.boldt@ucl.ac.uk\">a.boldt@ucl.ac.uk</a>). However, "
+                + "Should you wish to raise a complaint, please contact the Investigator of this project, "
+                + "Dr Annika Boldt (<a href=\"mailto:a.boldt@ucl.ac.uk\">a.boldt@ucl.ac.uk</a>), or the Principal Investigator "
+                + "Dr Sam Gilbert (<a href=\\\"mailto:sam.gilbert@ucl.ac.uk\\\">sam.gilbert@ucl.ac.uk</a>). However, "
                 + "if you feel your complaint has not been handled to your satisfaction, please be aware that you can "
                 + "also contact the Chair of the UCL Research Ethics Committee (<a href=\"mailto:ethics@ucl.ac.uk\">ethics@ucl.ac.uk</a>).");
     }

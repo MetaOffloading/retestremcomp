@@ -66,6 +66,12 @@ public class SequenceHandler {
 			/***********************************************************************
 			 * The code here defines the main sequence of events in the experiment *
 			 **********************************************************************/
+			//case 1:
+				//String startdata = TimeStamp.Now() + ",";
+				//startdata = startdata + SessionInfo.participantID;
+				
+				//PHP.logData("start", startdata, true);
+				//break;
 			case 1:
 				ClickPage.Run(Instructions.Get(0), "Next");
 				break;
@@ -158,7 +164,7 @@ public class SequenceHandler {
 				PHP.logData("finish", data, true);
 				break;
 			case 17:
-				Finish.Run();
+				ClickPage.Run(Instructions.Get(8), "nobutton");
 				break;
 			}
 			break;
