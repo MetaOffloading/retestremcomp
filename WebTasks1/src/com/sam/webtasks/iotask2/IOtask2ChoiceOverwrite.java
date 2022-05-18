@@ -27,20 +27,31 @@ public class IOtask2ChoiceOverwrite {
 		String overwriteString = "";
 		
 		int overwriteState = IOtask2BlockContext.currentOverwriteChoice();
+		
+		String remindInstruction = "You must do the task <b>without</b> setting any reminders.<br><br>";
+		String noremindInstruction = "You <b>must</b> set a reminder for every special circle. You will "
+								   + "not be able to continue otherwise.<br><br>";
 
-		if (overwriteState == 1) {
-			overwriteString = "Apologies but whatever you chose, this time the computer will decide.<br><br>You must do the task <b>without</b> setting any reminders.<br><br>";
+		if ((overwriteState == 1)&(IOtask2BlockContext.getReminderChoice() == 1)) {
+			overwriteString = "The computer will decide this time.<br><br>" + remindInstruction;
 			IOtask2BlockContext.setReminderCost(0);
 			IOtask2BlockContext.setOffloadCondition(Names.REMINDERS_NOTALLOWED);
 			IOtask2BlockContext.setActualPoints(IOtask2BlockContext.maxPoints());
-		} else if (overwriteState == 2) {
-			overwriteString = "Apologies but whatever you chose, this time the computer will decide.<br><br>You <b>must</b> set a reminder for every special circle.<br><br>";
+		} else if ((overwriteState == 2)&(IOtask2BlockContext.getReminderChoice() == 0)) {
+			overwriteString = "The computer will decide this time.<br><br>" + noremindInstruction; 
 			IOtask2BlockContext.setReminderCost(1);
 			IOtask2BlockContext.setOffloadCondition(Names.REMINDERS_MANDATORY_TARGETONLY);
 			IOtask2BlockContext.setActualPoints(IOtask2BlockContext.currentTargetValue());
 		} else {
-			overwriteString = "We will stick with <b>your choice</b> in this block.<br><br>";
+			overwriteString = "We will stick with <b>your choice</b> this time.<br><br>";
+			
+			if (IOtask2BlockContext.getReminderChoice() == 0) {
+				overwriteString = overwriteString + remindInstruction;
+			} else {
+				overwriteString = overwriteString + noremindInstruction;
+			}
 		} // we could make this even more explicit?
+		
 		
 	
 		displayText.setHTML(overwriteString);

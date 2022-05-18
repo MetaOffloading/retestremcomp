@@ -144,16 +144,23 @@ public class SequenceHandler {
 				ClickPage.Run(Instructions.Get(7), "Next");
 				break;
 			case 15:
+				ProgressBar.Initialise();
+				ProgressBar.Show();
+				ProgressBar.SetProgress(0,  24);
+				
 				IOtask2Block block6 = new IOtask2Block();
 				
 				block6.totalCircles = 15;
 				block6.nTargets = 7;
 				block6.standard24block = true;
 				block6.updateProgressText = true;
+				block6.updateProgress = true;
 				
 				block6.Run();
 				break;
 			case 16:
+				ProgressBar.Hide();
+				
 				// log data and check that it saves
 				String data = TimeStamp.Now() + ",";
 				data = data + SessionInfo.participantID + ",";

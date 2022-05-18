@@ -105,7 +105,7 @@ public class Instructions {
                     + "You are not expected to remember the special circles every time, "
                     + "just try your best. Please make wise decisions as to whether you would "
                     + "like to use reminders or not so that you can maximise your points.<br><br>"
-                    + "Sometimes, the computer will overwrite your choices. Independent of the "
+                    + "Sometimes, the computer will overwrite your choices. Regardless of the "
                     + "choice you just made you will then be told whether reminders are <b>forbidden</b> "
                     + "or whether they are <b>mandatory</b>. Please pay attention to when this "
                     + "happens and carefully follow the instructions.<br><br>"
