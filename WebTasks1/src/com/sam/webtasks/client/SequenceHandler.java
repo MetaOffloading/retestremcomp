@@ -155,6 +155,7 @@ public class SequenceHandler {
 				block6.standard24block = true;
 				block6.updateProgressText = true;
 				block6.updateProgress = true;
+				block6.countdownTimer = true;
 				
 				block6.Run();
 				break;
