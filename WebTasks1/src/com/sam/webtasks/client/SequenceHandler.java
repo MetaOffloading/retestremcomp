@@ -83,6 +83,8 @@ public class SequenceHandler {
 				
 				block1.totalCircles = 10;
 				block1.nTargets = 0;
+				block1.blockNum = 1;
+				block1.logDragData = true;
 				
 				block1.Run();
 				break;
@@ -95,6 +97,8 @@ public class SequenceHandler {
 				block2.totalCircles = 10;
 				block2.nTargets = 3;
 				block2.offloadCondition = Names.REMINDERS_NOTALLOWED;
+				block2.blockNum = 2;
+				block2.logDragData = true;
 				
 				block2.Run();
 				break;
@@ -107,6 +111,8 @@ public class SequenceHandler {
 				block3.totalCircles = 15;
 				block3.nTargets = 7;
 				block3.offloadCondition = Names.REMINDERS_NOTALLOWED;
+				block3.blockNum = 3;
+				block3.logDragData = true;
 				
 				block3.Run();
 				break;
@@ -125,6 +131,8 @@ public class SequenceHandler {
 				block4.totalCircles = 15;
 				block4.nTargets = 7;
 				block4.offloadCondition = Names.REMINDERS_MANDATORY_TARGETONLY;
+				block4.blockNum = 4;
+				block4.logDragData = true;
 				
 				block4.Run();
 				break;	
@@ -137,6 +145,8 @@ public class SequenceHandler {
 				block5.totalCircles = 15;
 				block5.nTargets = 7;
 				block5.targetValues.add(1);
+				block5.blockNum = 5;
+				block5.logDragData = true;
 				
 				block5.Run();
 				break;				
@@ -156,6 +166,8 @@ public class SequenceHandler {
 				block6.updateProgressText = true;
 				block6.updateProgress = true;
 				block6.countdownTimer = true;
+				block6.blockNum = 6;
+				block6.logDragData = true;
 				
 				block6.Run();
 				break;

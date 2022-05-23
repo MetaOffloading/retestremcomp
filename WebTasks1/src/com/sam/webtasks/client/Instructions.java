@@ -109,6 +109,8 @@ public class Instructions {
                     + "choice you just made you will then be told whether reminders are <b>forbidden</b> "
                     + "or whether they are <b>mandatory</b>. Please pay attention to when this "
                     + "happens and carefully follow the instructions.<br><br>"
+                    + "From now on, a little timer will indicate how much time you have left to "
+                    + "move all circles. Please complete every trial within 1 minute.<br><br>"
                     + "You can start the main experiment when you are ready.";
             break;
         case 8:

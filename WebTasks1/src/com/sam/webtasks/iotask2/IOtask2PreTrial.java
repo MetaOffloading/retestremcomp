@@ -142,7 +142,7 @@ public class IOtask2PreTrial {
 				
 				//,1, below indicates the output that reminders have been selected
 				
-				final String data = IOtask2BlockContext.getTrialNum() + "," + IOtask2BlockContext.currentTargetValue() + ",1," + (int) (responseTime.getTime() - instructionStart.getTime()); 
+				final String data = IOtask2BlockContext.getBlockNum() + "," + IOtask2BlockContext.getTrialNum() + "," + IOtask2BlockContext.currentTargetValue() + ",1," + (int) (responseTime.getTime() - instructionStart.getTime()); 
 
 				RootPanel.get().remove(horizontalPanel);
 
@@ -166,7 +166,7 @@ public class IOtask2PreTrial {
 				IOtask2BlockContext.setReminderCost(0);
 				
 				//,0, below indicates that reminders have not been selected
-				final String data = IOtask2BlockContext.getTrialNum() + "," + IOtask2BlockContext.currentTargetValue() + ",0," + (int) (responseTime.getTime() - instructionStart.getTime()); 
+				final String data = IOtask2BlockContext.getBlockNum() + "," + IOtask2BlockContext.getTrialNum() + "," + IOtask2BlockContext.currentTargetValue() + ",0," + (int) (responseTime.getTime() - instructionStart.getTime()); 
 
 				RootPanel.get().remove(horizontalPanel);
 

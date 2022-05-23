@@ -91,7 +91,7 @@ public class IOtask2ChoiceOverwrite {
 			public void onClick(ClickEvent event) {
 				Date responseTime = new Date();
 				
-				final String data = IOtask2BlockContext.getTrialNum() + "," + IOtask2BlockContext.currentTargetValue() + "," + IOtask2BlockContext.currentOverwriteChoice() + "," + (int) (responseTime.getTime() - overwriteStart.getTime());
+				final String data = IOtask2BlockContext.getBlockNum() + "," + IOtask2BlockContext.getTrialNum() + "," + IOtask2BlockContext.currentTargetValue() + "," + IOtask2BlockContext.currentOverwriteChoice() + "," + (int) (responseTime.getTime() - overwriteStart.getTime());
 				
 				RootPanel.get().remove(horizontalPanel);
 				

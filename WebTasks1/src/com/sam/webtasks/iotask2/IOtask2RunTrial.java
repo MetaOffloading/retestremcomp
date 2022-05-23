@@ -803,11 +803,20 @@ public class IOtask2RunTrial {
 							final Date endTime = new Date();
 
 							int duration = (int) (endTime.getTime() - trialStart.getTime());
+							
+							String overwr = "";
+							if (IOtask2BlockContext.getContext().standard24block == true) {
+								overwr = "," + IOtask2BlockContext.currentOverwriteChoice() + ",";
+							} else {
+								overwr = ",";
+							}
 
 							final String data = IOtask2BlockContext.getBlockNum() + ","
-									+ IOtask2BlockContext.getTrialNum() + "," + IOtask2BlockContext.currentTargetValue()
-									+ "," + IOtask2BlockContext.getnHits() + ","
-									+ IOtask2BlockContext.getReminderChoice() + "," + duration;
+									+ IOtask2BlockContext.getTrialNum() + ","
+									+ IOtask2BlockContext.currentTargetValue() + "," 
+									+ IOtask2BlockContext.getnHits() + ","
+									+ IOtask2BlockContext.getReminderChoice() + overwr
+									+ duration;
 
 							new Timer() {
 								public void run() {
