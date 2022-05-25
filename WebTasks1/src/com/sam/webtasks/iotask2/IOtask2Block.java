@@ -29,6 +29,9 @@ public class IOtask2Block {
 	// run a standard 24-trial block?
 	public boolean standard24block = false;
 	
+	// run a practice for a standard 24-trial block?
+	public boolean standard24blockprac = false;
+	
 	// reverse the order of the forced internal/external trials?
 	public boolean reverseForcedOrder = false;
 	
@@ -358,22 +361,50 @@ public class IOtask2Block {
 			// add numbers 2-9 and do this 3 times; also add the condition values (0-2)
 			for (int i = 2; i < 10; i++) {
 				choiceValues.add(i);
-				condValues.add(0);
+				condValues.add(-1);
 			}
 			for (int i = 2; i < 10; i++) {
 				choiceValues.add(i);
-				condValues.add(1);
+				condValues.add(-1);
 			}
 			for (int i = 2; i < 10; i++) {
 				choiceValues.add(i);
-				condValues.add(2);
+				condValues.add(-1);
 			}
 
-			// now shuffle so that they come in a random sequence
-			for (int i = 0; i < 24; i++) {
-				int whereto =  Random.nextInt(choiceValues.size());
+			// now shuffle so that they come in a random sequence but do so that
+			// participants don't get all high/low numbers in a row
+			for (int i = 0; i < 8; i++) {
+				int whereto =  Random.nextInt(8)+0;
 				Collections.swap(choiceValues, i, whereto);
-				Collections.swap(condValues, i, whereto);
+			}
+			for (int i = 8; i < 16; i++) {
+				int whereto =  Random.nextInt(8)+8;
+				Collections.swap(choiceValues, i, whereto);
+			}		
+			for (int i = 16; i < 24; i++) {
+				int whereto =  Random.nextInt(8)+16;
+				Collections.swap(choiceValues, i, whereto);
+			}				
+			// now we need to shuffle the conditions as well but keep them linked to
+			// the values
+			for (int i = 2; i < 10; i++) {
+				ArrayList<Integer> scrambledconds = new ArrayList<Integer>();
+				scrambledconds.add(0);
+				scrambledconds.add(1);
+				scrambledconds.add(2);
+				for (int j = 0; j < 3; j++) {
+					int whereto =  Random.nextInt(3);
+					Collections.swap(scrambledconds, j, whereto);
+				}
+				int whichswap = 0;
+				for (int k = 0; k < 24; k++) {
+					if(choiceValues.get(k)==i) {
+						condValues.set(k,scrambledconds.get(whichswap));
+						whichswap = whichswap + 1; 
+					}
+				}
+				
 			}
 
 			// now put the whole list of target values together
@@ -383,6 +414,15 @@ public class IOtask2Block {
 			}
 			
 		}
+		
+		
+		if (standard24blockprac) {
+			nTrials=1;
+			targetValues.add(1);
+			overwriteChoice.add(2);
+			
+		}
+		
 		
 		if (onlyChoiceTrials) {
 			nTrials=9;

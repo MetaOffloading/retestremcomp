@@ -50,8 +50,7 @@ public class IOtask2ChoiceOverwrite {
 			} else {
 				overwriteString = overwriteString + noremindInstruction;
 			}
-		} // we could make this even more explicit?
-		
+		}
 		
 	
 		displayText.setHTML(overwriteString);

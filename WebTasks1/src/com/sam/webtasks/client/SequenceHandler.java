@@ -154,24 +154,38 @@ public class SequenceHandler {
 				ClickPage.Run(Instructions.Get(7), "Next");
 				break;
 			case 15:
-				ProgressBar.Initialise();
-				ProgressBar.Show();
-				ProgressBar.SetProgress(0,  24);
-				
 				IOtask2Block block6 = new IOtask2Block();
 				
 				block6.totalCircles = 15;
 				block6.nTargets = 7;
-				block6.standard24block = true;
-				block6.updateProgressText = true;
-				block6.updateProgress = true;
-				block6.countdownTimer = true;
+				block6.standard24blockprac = true;
 				block6.blockNum = 6;
 				block6.logDragData = true;
 				
 				block6.Run();
-				break;
+				break;	
 			case 16:
+				ClickPage.Run(Instructions.Get(8), "Next");
+				break;	
+			case 17:
+				ProgressBar.Initialise();
+				ProgressBar.Show();
+				ProgressBar.SetProgress(0,  24);
+				
+				IOtask2Block block7 = new IOtask2Block();
+				
+				block7.totalCircles = 15;
+				block7.nTargets = 7;
+				block7.standard24block = true;
+				block7.updateProgressText = true;
+				block7.updateProgress = true;
+				block7.countdownTimer = true;
+				block7.blockNum = 7;
+				block7.logDragData = true;
+				
+				block7.Run();
+				break;
+			case 18:
 				ProgressBar.Hide();
 				
 				// log data and check that it saves
@@ -183,8 +197,8 @@ public class SequenceHandler {
 				PHP.UpdateStatus("finished");
 				PHP.logData("finish", data, true);
 				break;
-			case 17:
-				ClickPage.Run(Instructions.Get(8), "nobutton");
+			case 19:
+				ClickPage.Run(Instructions.Get(9), "nobutton");
 				break;
 			}
 			break;
@@ -316,7 +330,7 @@ public class SequenceHandler {
 				}
 				break;
 			case 4:
-				if (IOtask2BlockContext.getContext().standard24block == true) {
+				if (IOtask2BlockContext.getContext().standard24block == true | IOtask2BlockContext.getContext().standard24blockprac == true) {
 					IOtask2ChoiceOverwrite.Run();
 				}  else {
 					SequenceHandler.Next();

@@ -18,10 +18,10 @@ public class Instructions {
                     + "<br><br>Please close any programs "
                     + "that could cause distraction (e.g. email clients) and "
                     + "maximise the size of this window.<br><br>This experiment will take "
-                    + "approximately 40 minutes. Please only continue when you think "
-                    + "you will be free from distractions for the next 40 minutes.<br><br>"
+                    + "approximately 30 minutes. Please only continue when you think "
+                    + "you will be free from distractions for the next 30 minutes.<br><br>"
                     + "As compensation for completing "
-                    + "this experiment, you will receive £5 via the Prolific "
+                    + "this experiment, you will receive £3.50 via the Prolific "
                     + "system.<br><br>You may withdraw at any time without penalty, simply by "
                     + "closing your browser window. If you are having difficulty "
                     + "running the experiment we recommend that you try using Google "
@@ -84,36 +84,43 @@ public class Instructions {
             break;
         case 6:
         	i = "From now on, you will score points every time you drag one of the special circles "  
-					+ "to the correct location.<br><br>You should try to score as many points as you can.<br><br>"
-        			+ "You will always have a choice between two options when you do the task. One option will be to do the task "
-        			+ "<b>without reminders</b>. If you choose this option, you will always score "
-        			+ "<b>10 points</b> for every special circle you remember.<br><br>The other option will be to "
-        			+ "do the task <b>with reminders</b>, but in this case each special circle will be worth "
-        			+ "<b>fewer points</b>. For example, you might be told that if you want to use reminders, "
-        			+ "each special circle will be worth only 5 points.<br><br>You should choose whichever "
-        			+ "option you think will score you the most points. <br><br>So if, for example, you "
-        			+ "thought you would earn more points by setting reminders and scoring 5 points for "
-        			+ "each special circle, you should choose this option. But if you thought you would "
-        			+ "score more points by just using your own memory and earning 10 points for each special "
-        			+ "circle, you should choose this option instead. When you are presented with a choice like this, "
-        			+ "it is completely up to you. You should do whatever you think will allow you to score the highest number of points.<br><br>"
-        			+ "Click below to complete one last practice block.";
-            break;            
+					+ "to the correct border. You should try to score as many points as you can. "
+					+ "The top 50% of participants will receive a bonus payment of £1.<br><br>"
+        			
+        			+ "If you do the task <b>without reminders</b>, you will be able to win "
+					+ "<b>10 points</b> for each special circle. "
+        			+ "If you do the task <b>with reminders</b>, each special "
+					+ "circle gets you <b>fewer points</b>. How many points exactly you can win for each special "
+        			+ "circle if you use reminders varies from block to block.<br><br>"
+					
+					+ "You will always have a choice between these two options and your decision is "
+					+ "completely up to you. Please just keep in mind not only the points, but also how many "
+        			+ "special circles you are likely to drag to the correct border with/without reminders.<br><br>"
+        			
+        			+ "It is important that you make these decisions carefully again and again as they are "
+        			+ "likely to change and fluctuate over time depending on various factors.<br><br>"
+        			
+        			+ "Click below to complete another practice block.";
+            break; 
         case 7:
+        	i = "There is one last element to this task, which is that on a random number of blocks, "
+        			+ "the computer will overwrite your choices. Regardless of the choice you just "
+        			+ "made you will then be told whether reminders are <b>forbidden</b> or whether "
+        			+ "they are <b>mandatory</b>. Please pay attention to when this happens and "
+        			+ "carefully follow the instructions.<br><br>"
+        			+ "Click below to complete one last practice block.";
+        	break;
+        case 8:
             i = "Now this task will start for real.<br><br>"
                     + "Please perform the task as quickly and accurately as possible.<br><br>"
                     + "You are not expected to remember the special circles every time, "
                     + "just try your best. Please make wise decisions as to whether you would "
                     + "like to use reminders or not so that you can maximise your points.<br><br>"
-                    + "Sometimes, the computer will overwrite your choices. Regardless of the "
-                    + "choice you just made you will then be told whether reminders are <b>forbidden</b> "
-                    + "or whether they are <b>mandatory</b>. Please pay attention to when this "
-                    + "happens and carefully follow the instructions.<br><br>"
                     + "From now on, a little timer will indicate how much time you have left to "
-                    + "move all circles. Please complete every trial within 1 minute.<br><br>"
+                    + "move all circles. Please complete every block within 1 minute.<br><br>"
                     + "You can start the main experiment when you are ready.";
             break;
-        case 8:
+        case 9:
 			i = "You have now completed the experiment. Thank you for taking part.<br><br>"
 					+ "In the present study we tried to understand how people choose to set "
 					+ "reminders. Previous studies have shown that the simple act of "
@@ -145,7 +152,7 @@ public class Instructions {
                 + "particular numbers and move the corresponding circle in a particular direction. You will be asked how "
                 + "confident you are in your ability to solve the task. "
                 + "The experiment "
-                + "will last approximately 40 minutes and you will receive a payment of £5 via the"
+                + "will last approximately 30 minutes and you will receive a payment of £3.50 via the"
                 + "Prolific payment system. There are no anticipated risks or "
                 + "benefits associated with participation in this study.<br><br>"
                 + "It is up to you to decide whether or not to take part. If you choose "
