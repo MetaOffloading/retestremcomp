@@ -84,24 +84,33 @@ public class Instructions {
             break;
         case 6:
         	i = "From now on, you will score points every time you drag one of the special circles "  
-					+ "to the correct border. You should try to score as many points as you can. "
-					+ "The top 50% of participants will receive a bonus payment of £1.<br><br>"
-        			
-        			+ "If you do the task <b>without reminders</b>, you will be able to win "
-					+ "<b>10 points</b> for each special circle. "
-        			+ "If you do the task <b>with reminders</b>, each special "
-					+ "circle gets you <b>fewer points</b>. How many points exactly you can win for each special "
-        			+ "circle if you use reminders varies from block to block.<br><br>"
-					
-					+ "You will always have a choice between these two options and your decision is "
-					+ "completely up to you. Please just keep in mind not only the points, but also how many "
-        			+ "special circles you are likely to drag to the correct border with/without reminders.<br><br>"
-        			
-        			+ "It is important that you make these decisions carefully again and again as they are "
-        			+ "likely to change and fluctuate over time depending on various factors.<br><br>"
-        			
-        			+ "Click below to complete another practice block.";
-            break; 
+					+ "to the correct border.<br><br>You should try to score as many points as you can.<br><br>"
+					+ "The top 50% of participants will receive an additional bonus payment of £1.<br><br>";
+        	break;
+        case 61:
+        	i = "Each time you do the task, you will have a choice between two options. One option will be to "
+        	        + "do the task <b>without reminders</b>. If you choose this option, you will always score "
+        	        + "10 points for every special circle you remember.<br><br>The other option will be to do the task "
+        	        + "<b>with reminders</b>. If you choose this option, each special circle will be worth fewer "
+        	        + "points. For example, you might be told that if you want to use reminders, each special "
+        	        + "circle will be worth only 5 points.<br><br>You should choose whichever option you think will "
+        	        + "score you the most points.<br><br>So if, for example, you thought you would earn more "
+        	        + "points by setting reminders and scoring 5 points for each special circle, you should choose "
+        	        + "this option. But if you thought you would score more points by just using your own memory "
+        	        + "and earning 10 points for each special circle, you should choose this option instead.";
+        	break;
+        case 62:
+        	i = "When you are presented with a choice like this, it is completely up to you. "
+                    + "You should do whatever you think will allow you to score the highest number of points. "
+                    + "Please keep in mind not only the points, but also how many special circles you are likely to "
+                    + "drag to the correct border with/without reminders.<br><br>"
+        			+ "If you use reminders, the exact number of points you can win for each special circle will vary, "
+        			+ "but it will always be less than 10. You will always be told exactly "
+        			+ "how many points the special circles are worth, before you make your choice.<br><br>"
+        			+ "Please make your decisions carefully to make sure you score as many points as possible. This "
+        			+ "will give you the best chance to earn the additional £1 bonus payment.<br><br>"
+        			+ "Click below for some more practice.";
+        	break;
         case 7:
         	i = "There is one last element to this task, which is that on a random number of blocks, "
         			+ "the computer will overwrite your choices. Regardless of the choice you just "

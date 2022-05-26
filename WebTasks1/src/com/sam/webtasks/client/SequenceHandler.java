@@ -140,6 +140,12 @@ public class SequenceHandler {
 				ClickPage.Run(Instructions.Get(6), "Next");
 				break;
 			case 13:
+				ClickPage.Run(Instructions.Get(61), "Next");
+				break;
+			case 14:
+				ClickPage.Run(Instructions.Get(62), "Next");
+				break;
+			case 15:
 				IOtask2Block block5 = new IOtask2Block();
 				
 				block5.totalCircles = 15;
@@ -150,10 +156,10 @@ public class SequenceHandler {
 				
 				block5.Run();
 				break;				
-			case 14:
+			case 16:
 				ClickPage.Run(Instructions.Get(7), "Next");
 				break;
-			case 15:
+			case 17:
 				IOtask2Block block6 = new IOtask2Block();
 				
 				block6.totalCircles = 15;
@@ -164,10 +170,10 @@ public class SequenceHandler {
 				
 				block6.Run();
 				break;	
-			case 16:
+			case 18:
 				ClickPage.Run(Instructions.Get(8), "Next");
 				break;	
-			case 17:
+			case 19:
 				ProgressBar.Initialise();
 				ProgressBar.Show();
 				ProgressBar.SetProgress(0,  24);
@@ -185,7 +191,7 @@ public class SequenceHandler {
 				
 				block7.Run();
 				break;
-			case 18:
+			case 20:
 				ProgressBar.Hide();
 				
 				// log data and check that it saves
@@ -197,7 +203,7 @@ public class SequenceHandler {
 				PHP.UpdateStatus("finished");
 				PHP.logData("finish", data, true);
 				break;
-			case 19:
+			case 21:
 				ClickPage.Run(Instructions.Get(9), "nobutton");
 				break;
 			}
