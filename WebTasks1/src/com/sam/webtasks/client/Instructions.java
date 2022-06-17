@@ -59,16 +59,25 @@ public class Instructions {
                     + "Click below to practise the task.";
             break;
         case 3:
-        	i = "Well done. Now it will get more difficult.<br><br>There will be a total of 15 "
-        			+ "circles and 7 of them will be special ones that should go to one of the "
-        			+ "coloured sides of the box.<br><br> "
-        			+ "Don't worry if you do not remember all of them. That's fine - "
-        			+ "just try to remember as many as you can.<br><br>"
-        			+ "Click below to practise the task.";
+			if (Counterbalance.getFactorLevel("difficulty") == 0) {
+				i = "Well done. Now it will get more difficult.<br><br>There will be a total of 15 "
+	        			+ "circles and 4 of them will be special ones that should go to one of the "
+	        			+ "coloured sides of the box.<br><br> "
+	        			+ "Don't worry if you do not remember all of them. That's fine - "
+	        			+ "just try to remember as many as you can.<br><br>"
+	        			+ "Click below to practise the task.";
+			} else {
+				i = "Well done. Now it will get more difficult.<br><br>There will be a total of 15 "
+	        			+ "circles and 7 of them will be special ones that should go to one of the "
+	        			+ "coloured sides of the box.<br><br> "
+	        			+ "Don't worry if you do not remember all of them. That's fine - "
+	        			+ "just try to remember as many as you can.<br><br>"
+	        			+ "Click below to practise the task.";
+			}
             break;
         case 4:
         	i="Now that you have had some practice with the experiment, we would like you to tell us "
-                    + "how accurately you can perform the task.<br><br>"
+                    + "how <b>confident</b> you are that you can accurately perform the task.<br><br>"
                     + "Please use the scale below to indicate what percentage of "
                     + "the special circles you can correctly drag to the instructed side of the square, on average. 100% "
                     + "would mean that you always get every single one correct. 0% would mean that you can never "
@@ -130,6 +139,20 @@ public class Instructions {
                     + "You can start the main experiment when you are ready.";
             break;
         case 9:
+			i = "You have now completed the experimental blocks, thank you. "
+					+ "Next, we ask you to complete a "
+					+ "brief questionnaire.<br><br>"
+					+ "Please start the questionnaire when you are ready.";
+			break;
+        case 10:
+        	i="Finally, we are interested to know how you did the task, in "
+                    + "particular how you decided to set reminders. Earlier, we asked "
+        			+ "you to rate how many of the special circles you think "
+                    + "you would remember on your own. How much did confidence in your "
+                    + "own memory affect your decision to choose reminders?<br><br>"
+                    + "Please use the scale below to indicate your response.";
+            break;
+        case 11:
 			i = "You have now completed the experiment. Thank you for taking part.<br><br>"
 					+ "In the present study we tried to understand how people choose to set "
 					+ "reminders. Previous studies have shown that the simple act of "

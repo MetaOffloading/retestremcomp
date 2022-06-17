@@ -108,8 +108,12 @@ public class SequenceHandler {
 			case 7:
 				IOtask2Block block3 = new IOtask2Block();
 				
+				if (Counterbalance.getFactorLevel("difficulty") == 0) {
+					block3.nTargets = 4;
+				} else {
+					block3.nTargets = 7;
+				}
 				block3.totalCircles = 15;
-				block3.nTargets = 7;
 				block3.offloadCondition = Names.REMINDERS_NOTALLOWED;
 				block3.blockNum = 3;
 				block3.logDragData = true;
@@ -128,8 +132,12 @@ public class SequenceHandler {
 			case 11:
 				IOtask2Block block4 = new IOtask2Block();
 				
+				if (Counterbalance.getFactorLevel("difficulty") == 0) {
+					block4.nTargets = 4;
+				} else {
+					block4.nTargets = 7;
+				}
 				block4.totalCircles = 15;
-				block4.nTargets = 7;
 				block4.offloadCondition = Names.REMINDERS_MANDATORY_TARGETONLY;
 				block4.blockNum = 4;
 				block4.logDragData = true;
@@ -148,8 +156,12 @@ public class SequenceHandler {
 			case 15:
 				IOtask2Block block5 = new IOtask2Block();
 				
+				if (Counterbalance.getFactorLevel("difficulty") == 0) {
+					block5.nTargets = 4;
+				} else {
+					block5.nTargets = 7;
+				}
 				block5.totalCircles = 15;
-				block5.nTargets = 7;
 				block5.targetValues.add(1);
 				block5.blockNum = 5;
 				block5.logDragData = true;
@@ -162,8 +174,12 @@ public class SequenceHandler {
 			case 17:
 				IOtask2Block block6 = new IOtask2Block();
 				
+				if (Counterbalance.getFactorLevel("difficulty") == 0) {
+					block6.nTargets = 4;
+				} else {
+					block6.nTargets = 7;
+				}
 				block6.totalCircles = 15;
-				block6.nTargets = 7;
 				block6.standard24blockprac = true;
 				block6.blockNum = 6;
 				block6.logDragData = true;
@@ -180,8 +196,12 @@ public class SequenceHandler {
 				
 				IOtask2Block block7 = new IOtask2Block();
 				
+				if (Counterbalance.getFactorLevel("difficulty") == 0) {
+					block7.nTargets = 4;
+				} else {
+					block7.nTargets = 7;
+				}
 				block7.totalCircles = 15;
-				block7.nTargets = 7;
 				block7.standard24block = true;
 				block7.updateProgressText = true;
 				block7.updateProgress = true;
@@ -192,6 +212,16 @@ public class SequenceHandler {
 				block7.Run();
 				break;
 			case 20:
+				ClickPage.Run(Instructions.Get(9),  "Next");
+				break;
+			case 21:
+				ProgressBar.Increment();
+				IUS12.Run();
+				break;
+			case 22:
+				Slider.Run(Instructions.Get(10), "I always consulted my confidence.", "I never consulted my confidence.");
+				break;
+			case 23:
 				ProgressBar.Hide();
 				
 				// log data and check that it saves
@@ -199,12 +229,13 @@ public class SequenceHandler {
 				data = data + SessionInfo.participantID + ",";
 				data = data + SessionInfo.gender + ",";
 				data = data + SessionInfo.age;
+				data = data + Counterbalance.getCounterbalancingCell(); //Counterbalance.getFactorLevel("difficulty");
 
 				PHP.UpdateStatus("finished");
 				PHP.logData("finish", data, true);
 				break;
-			case 21:
-				ClickPage.Run(Instructions.Get(9), "nobutton");
+			case 24:
+				ClickPage.Run(Instructions.Get(11), "nobutton");
 				break;
 			}
 			break;
