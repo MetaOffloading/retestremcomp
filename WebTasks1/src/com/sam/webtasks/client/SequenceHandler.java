@@ -228,7 +228,7 @@ public class SequenceHandler {
 				String data = TimeStamp.Now() + ",";
 				data = data + SessionInfo.participantID + ",";
 				data = data + SessionInfo.gender + ",";
-				data = data + SessionInfo.age;
+				data = data + SessionInfo.age + ",";
 				data = data + Counterbalance.getCounterbalancingCell(); //Counterbalance.getFactorLevel("difficulty");
 
 				PHP.UpdateStatus("finished");
