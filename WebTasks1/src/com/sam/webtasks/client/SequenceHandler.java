@@ -219,7 +219,7 @@ public class SequenceHandler {
 				IUS12.Run();
 				break;
 			case 22:
-				Slider.Run(Instructions.Get(10), "I always consulted my confidence.", "I never consulted my confidence.");
+				Slider.Run(Instructions.Get(10), "I always thought about how confident I was.", "I never thought about how confident I was.");
 				break;
 			case 23:
 				ProgressBar.Hide();

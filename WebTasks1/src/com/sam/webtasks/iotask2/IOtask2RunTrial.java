@@ -816,7 +816,8 @@ public class IOtask2RunTrial {
 									+ IOtask2BlockContext.currentTargetValue() + "," 
 									+ IOtask2BlockContext.getnHits() + ","
 									+ IOtask2BlockContext.getReminderChoice() + overwr
-									+ IOtask2BlockContext.getContext().nTargets
+									+ IOtask2BlockContext.getContext().nTargets + ","
+									+ IOtask2BlockContext.getTotalPoints() + ","
 									+ duration;
 
 							new Timer() {
