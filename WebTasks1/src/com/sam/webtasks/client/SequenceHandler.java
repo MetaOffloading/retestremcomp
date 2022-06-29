@@ -222,6 +222,9 @@ public class SequenceHandler {
 				Slider.Run(Instructions.Get(10), "I always thought about how confident I was.", "I never thought about how confident I was.");
 				break;
 			case 23:
+				PHP.logData("slider2", ""+Slider.getSliderValue(), true);
+				break;
+			case 24:
 				ProgressBar.Hide();
 				
 				// log data and check that it saves
@@ -234,7 +237,7 @@ public class SequenceHandler {
 				PHP.UpdateStatus("finished");
 				PHP.logData("finish", data, true);
 				break;
-			case 24:
+			case 25:
 				ClickPage.Run(Instructions.Get(11), "nobutton");
 				break;
 			}
