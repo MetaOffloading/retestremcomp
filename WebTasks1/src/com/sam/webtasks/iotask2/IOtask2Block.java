@@ -32,6 +32,9 @@ public class IOtask2Block {
 	// run a practice for a standard 24-trial block?
 	public boolean standard24blockprac = false;
 	
+	// run a standard 16-trial block?
+	public boolean standard16block = false;
+	
 	// reverse the order of the forced internal/external trials?
 	public boolean reverseForcedOrder = false;
 	
@@ -420,6 +423,90 @@ public class IOtask2Block {
 			nTrials=1;
 			targetValues.add(1);
 			overwriteChoice.add(2);
+			
+		}
+		
+		if (standard16block) {
+			nTrials=16;
+			
+			// 16 trials is the standard number of trials for 4 of each forced condition
+			// plus 8 additional choice trials (but all 16 trials start with choices)
+
+			// first set up and shuffle the 8 choice values
+			ArrayList<Integer> choiceValues = new ArrayList<Integer>();
+			ArrayList<Integer> condValues = new ArrayList<Integer>();
+			
+			// add numbers 2-9 and do this 3 times; also add the condition values (0-2)
+			for (int i = 2; i < 10; i++) {
+				choiceValues.add(i);
+				condValues.add(-1);
+			}
+			for (int i = 2; i < 10; i++) {
+				condValues.add(-1);
+			}
+			choiceValues.add(2);
+			choiceValues.add(4);
+			choiceValues.add(6);
+			choiceValues.add(8);
+			choiceValues.add(3);
+			choiceValues.add(5);
+			choiceValues.add(7);
+			choiceValues.add(9);
+
+			// now shuffle so that they come in a random sequence but do so that
+			// participants don't get all high/low numbers in a row
+			for (int i = 0; i < 8; i++) {
+				int whereto =  Random.nextInt(8)+0;
+				Collections.swap(choiceValues, i, whereto);
+			}
+			for (int i = 8; i < 12; i++) {
+				int whereto =  Random.nextInt(4)+8;
+				Collections.swap(choiceValues, i, whereto);
+			}		
+			for (int i = 12; i < 16; i++) {
+				int whereto =  Random.nextInt(4)+12;
+				Collections.swap(choiceValues, i, whereto);
+			}				
+			// now we need to shuffle the conditions as well but keep them linked to
+			// the values
+			for (int i = 2; i < 10; i++) {
+				ArrayList<Integer> scrambledconds = new ArrayList<Integer>();
+				scrambledconds.add(0);
+				if (Counterbalance.getFactorLevel("counterbtargetvals") == 0) {
+					if (i % 2 == 0) {
+						scrambledconds.add(1);
+					} else {
+						scrambledconds.add(2);
+					}
+				} else {
+					if (i % 2 == 0) {
+						scrambledconds.add(2);
+					} else {
+						scrambledconds.add(1);
+					}				
+				}
+				for (int j = 0; j < 2; j++) {
+					int whereto =  Random.nextInt(2);
+					Collections.swap(scrambledconds, j, whereto);
+				}
+				int whichswap = 0;
+				for (int k = 0; k < 16; k++) {
+					if(choiceValues.get(k)==i) {
+						condValues.set(k,scrambledconds.get(whichswap));
+						whichswap = whichswap + 1; 
+					}
+				}
+				
+			}
+
+			// now put the whole list of target values together
+			for (int i = 0; i < 16; i++) {
+				targetValues.add(choiceValues.get(i));
+				overwriteChoice.add(condValues.get(i));
+			}
+			
+			
+			
 			
 		}
 		

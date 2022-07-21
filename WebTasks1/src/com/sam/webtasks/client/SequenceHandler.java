@@ -108,11 +108,7 @@ public class SequenceHandler {
 			case 7:
 				IOtask2Block block3 = new IOtask2Block();
 				
-				if (Counterbalance.getFactorLevel("difficulty") == 0) {
-					block3.nTargets = 4;
-				} else {
-					block3.nTargets = 7;
-				}
+				block3.nTargets = 7;
 				block3.totalCircles = 15;
 				block3.offloadCondition = Names.REMINDERS_NOTALLOWED;
 				block3.blockNum = 3;
@@ -132,11 +128,7 @@ public class SequenceHandler {
 			case 11:
 				IOtask2Block block4 = new IOtask2Block();
 				
-				if (Counterbalance.getFactorLevel("difficulty") == 0) {
-					block4.nTargets = 4;
-				} else {
-					block4.nTargets = 7;
-				}
+				block4.nTargets = 7;
 				block4.totalCircles = 15;
 				block4.offloadCondition = Names.REMINDERS_MANDATORY_TARGETONLY;
 				block4.blockNum = 4;
@@ -156,11 +148,7 @@ public class SequenceHandler {
 			case 15:
 				IOtask2Block block5 = new IOtask2Block();
 				
-				if (Counterbalance.getFactorLevel("difficulty") == 0) {
-					block5.nTargets = 4;
-				} else {
-					block5.nTargets = 7;
-				}
+				block5.nTargets = 7;
 				block5.totalCircles = 15;
 				block5.targetValues.add(1);
 				block5.blockNum = 5;
@@ -174,11 +162,7 @@ public class SequenceHandler {
 			case 17:
 				IOtask2Block block6 = new IOtask2Block();
 				
-				if (Counterbalance.getFactorLevel("difficulty") == 0) {
-					block6.nTargets = 4;
-				} else {
-					block6.nTargets = 7;
-				}
+				block6.nTargets = 7;
 				block6.totalCircles = 15;
 				block6.standard24blockprac = true;
 				block6.blockNum = 6;
@@ -192,17 +176,13 @@ public class SequenceHandler {
 			case 19:
 				ProgressBar.Initialise();
 				ProgressBar.Show();
-				ProgressBar.SetProgress(0,  24);
+				ProgressBar.SetProgress(0, 16);
 				
 				IOtask2Block block7 = new IOtask2Block();
 				
-				if (Counterbalance.getFactorLevel("difficulty") == 0) {
-					block7.nTargets = 4;
-				} else {
-					block7.nTargets = 7;
-				}
+				block7.nTargets = 7;
 				block7.totalCircles = 15;
-				block7.standard24block = true;
+				block7.standard16block = true;
 				block7.updateProgressText = true;
 				block7.updateProgress = true;
 				block7.countdownTimer = true;
@@ -216,15 +196,9 @@ public class SequenceHandler {
 				break;
 			case 21:
 				ProgressBar.Increment();
-				IUS12.Run();
+				XMQ.Run();
 				break;
 			case 22:
-				Slider.Run(Instructions.Get(10), "I always thought about how confident I was.", "I never thought about how confident I was.");
-				break;
-			case 23:
-				PHP.logData("slider2", ""+Slider.getSliderValue(), true);
-				break;
-			case 24:
 				ProgressBar.Hide();
 				
 				// log data and check that it saves
@@ -232,13 +206,13 @@ public class SequenceHandler {
 				data = data + SessionInfo.participantID + ",";
 				data = data + SessionInfo.gender + ",";
 				data = data + SessionInfo.age + ",";
-				data = data + Counterbalance.getCounterbalancingCell(); //Counterbalance.getFactorLevel("difficulty");
+				data = data + Counterbalance.getCounterbalancingCell();
 
 				PHP.UpdateStatus("finished");
 				PHP.logData("finish", data, true);
 				break;
-			case 25:
-				ClickPage.Run(Instructions.Get(11), "nobutton");
+			case 23:
+				ClickPage.Run(Instructions.Get(10), "nobutton");
 				break;
 			}
 			break;
@@ -370,7 +344,7 @@ public class SequenceHandler {
 				}
 				break;
 			case 4:
-				if (IOtask2BlockContext.getContext().standard24block == true | IOtask2BlockContext.getContext().standard24blockprac == true) {
+				if (IOtask2BlockContext.getContext().standard24block == true | IOtask2BlockContext.getContext().standard24blockprac == true | IOtask2BlockContext.getContext().standard16block == true) {
 					IOtask2ChoiceOverwrite.Run();
 				}  else {
 					SequenceHandler.Next();

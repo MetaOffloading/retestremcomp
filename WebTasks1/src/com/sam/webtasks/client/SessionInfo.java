@@ -16,7 +16,7 @@ public class SessionInfo {
 	public static String experimentCode="AnnikaDemo";
 	
 	//which version of the experiment is this?
-	public static int experimentVersion=3;
+	public static int experimentVersion=4;
 	
 	//what is the minimum permitted screen size in pixels?
 	//if the screen is smaller than this the participant will be asked
@@ -39,7 +39,7 @@ public class SessionInfo {
 	//if you want to specify the level of any of those factors, set it with specifiedLevels. otherwise set to -1
 	//e.g. specifiedLevels = {-1, 2, -1}; would randomise factors 1 and 3, and set the second factor to level 2
 	//NB levels range from 0 to (maximum - 1)
-	public static String[] counterbalanceFactors = {"difficulty"};
+	public static String[] counterbalanceFactors = {"counterbtargetvals"};
 	public static int[] counterbalanceLevels = {2};
 	public static int[] specifiedLevels = {-1};
 	

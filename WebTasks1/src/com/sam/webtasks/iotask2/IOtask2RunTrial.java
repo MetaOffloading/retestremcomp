@@ -610,7 +610,13 @@ public class IOtask2RunTrial {
 							circleText[clickedCircle].setText("");
 							moreCircles = false;
 						}
-
+						
+						if (IOtask2BlockContext.getContext().standard16block==true) {
+							if (IOtask2BlockContext.currentOverwriteChoice()==0) {
+								moreCircles = false;
+							}
+						}
+						
 						if (moreCircles) { // more circles to add on screen
 							final int newCircle = IOtask2BlockContext.getCompletedCircles()
 									+ IOtask2BlockContext.getnCircles() - 1;
@@ -795,6 +801,13 @@ public class IOtask2RunTrial {
 						if (IOtask2BlockContext.getCompletedCircles() == (IOtask2BlockContext.getSurpriseTest() + IOtask2BlockContext.getnCircles() - 1)) { 
 							trialEnded=true;
 						}
+						
+						// end of partial trial?
+						if (IOtask2BlockContext.getContext().standard16block==true) {
+							if (IOtask2BlockContext.currentOverwriteChoice()==0 & IOtask2BlockContext.getCompletedCircles()==6) {
+								trialEnded=true;
+							}
+						}
 			
 						if (trialEnded) {
 							trialTimer.cancel();
@@ -805,10 +818,20 @@ public class IOtask2RunTrial {
 							int duration = (int) (endTime.getTime() - trialStart.getTime());
 							
 							String overwr = "";
-							if (IOtask2BlockContext.getContext().standard24block == true) {
+							if (IOtask2BlockContext.getContext().standard24block == true | IOtask2BlockContext.getContext().standard16block == true) {
 								overwr = "," + IOtask2BlockContext.currentOverwriteChoice() + ",";
 							} else {
 								overwr = ",";
+							}
+							String ntar = "";
+							if (IOtask2BlockContext.getContext().standard16block==true) {
+								if (IOtask2BlockContext.currentOverwriteChoice()==0) {
+									ntar = "0,";
+								} else {
+									ntar = IOtask2BlockContext.getContext().nTargets + ",";
+								}
+							} else {
+								ntar = IOtask2BlockContext.getContext().nTargets + ",";
 							}
 
 							final String data = IOtask2BlockContext.getBlockNum() + ","
@@ -816,7 +839,7 @@ public class IOtask2RunTrial {
 									+ IOtask2BlockContext.currentTargetValue() + "," 
 									+ IOtask2BlockContext.getnHits() + ","
 									+ IOtask2BlockContext.getReminderChoice() + overwr
-									+ IOtask2BlockContext.getContext().nTargets + ","
+									+ ntar
 									+ IOtask2BlockContext.getTotalPoints() + ","
 									+ duration;
 
