@@ -67,17 +67,17 @@ public class SequenceHandler {
 			 * The code here defines the main sequence of events in the experiment *
 			 **********************************************************************/
 			//case 1:
-				//String startdata = TimeStamp.Now() + ",";
-				//startdata = startdata + SessionInfo.participantID;
-				
-				//PHP.logData("start", startdata, true);
-				//break;
+			//String startdata = TimeStamp.Now() + ",";
+			//startdata = startdata + SessionInfo.participantID;
+			
+			//PHP.logData("start", startdata, true);
+			//break;
 			case 1:
 				ClickPage.Run(Instructions.Get(0), "Next");
 				break;
 			case 2:
 				ClickPage.Run(Instructions.Get(1), "Next");
-				break;				
+				break;					
 			case 3:
 				IOtask2Block block1 = new IOtask2Block();
 				
@@ -196,9 +196,36 @@ public class SequenceHandler {
 				break;
 			case 21:
 				ProgressBar.Increment();
-				XMQ.Run();
+				AUDIT.Run();
 				break;
 			case 22:
+				AES.Run();
+				break;
+			case 23:
+				SDS.Run();
+				break;
+			case 24:
+				EAT26.Run();
+				break;
+			case 25:
+				BIS11.Run();
+				break;
+			case 26:
+				OCIR.Run();
+				break;
+			case 27:
+				STAI.Run();
+				break;
+			case 28:
+				Schizotypy.Run();
+				break;
+			case 29:
+				LSAS1.Run();
+				break;
+			case 30:
+				LSAS2.Run();
+				break;
+			case 31:
 				ProgressBar.Hide();
 				
 				// log data and check that it saves
@@ -211,7 +238,7 @@ public class SequenceHandler {
 				PHP.UpdateStatus("finished");
 				PHP.logData("finish", data, true);
 				break;
-			case 23:
+			case 32:
 				ClickPage.Run(Instructions.Get(10), "nobutton");
 				break;
 			}
@@ -251,18 +278,17 @@ public class SequenceHandler {
 				CheckScreenSize.Run(SessionInfo.minScreenSize, SessionInfo.minScreenSize);
 				break;
 			case 6:
-				if (SessionInfo.runInfoConsentPages) { 
-					InfoSheet.Run(Instructions.InfoText());
-				} else {
+				//if (SessionInfo.runInfoConsentPages) { 
+					//InfoSheet.Run(Instructions.InfoText());
+				//} else {
 					SequenceHandler.Next();
-				}
+				//}
 				break;
 			case 7:
-				if (SessionInfo.runInfoConsentPages) { 
-					Consent.Run();
-				} else {
+				////	Consent.Run();
+				//} else {
 					SequenceHandler.Next();
-				}
+				//}
 				break;
 			case 8:
 				//record the participant's counterbalancing condition in the status table				

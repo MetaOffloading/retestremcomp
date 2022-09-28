@@ -41,7 +41,8 @@ public class SessionInfo {
 	//NB levels range from 0 to (maximum - 1)
 	public static String[] counterbalanceFactors = {"counterbtargetvals"};
 	public static int[] counterbalanceLevels = {2};
-	public static int[] specifiedLevels = {-1};
+	//public static int[] specifiedLevels = {-1};
+	public static int[] specifiedLevels = {1}; // collect remaining datasets, second counterbalancing condition
 	
 	/*************************************************/
     /* no need to edit the settings below this point */
