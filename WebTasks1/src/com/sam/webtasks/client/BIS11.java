@@ -56,7 +56,7 @@ public class BIS11 {
 		qBIS11.items[2] = "I make-up my mind quickly.";
 		qBIS11.items[3] = "I am happy-go-lucky.";
 		qBIS11.items[4] = "I don’t “pay attention”.";
-		qBIS11.items[5] = "I have “racing” thoughts.";
+		qBIS11.items[5] = "I have \"racing\" thoughts.";
 		qBIS11.items[6] = "I plan trips well ahead of time.";
 		qBIS11.items[7] = "I am self controlled.";
 		qBIS11.items[8] = "I concentrate easily.";
@@ -67,7 +67,7 @@ public class BIS11 {
 		qBIS11.items[13] = "I say things without thinking.";
 		qBIS11.items[14] = "I like to think about complex problems.";
 		qBIS11.items[15] = "I change jobs.";
-		qBIS11.items[16] = "I act “on impulse.";
+		qBIS11.items[16] = "I act \"on impulse\".";
 		qBIS11.items[17] = "I get easily bored when solving thought problems.";
 		qBIS11.items[18] = "I act on the spur of the moment.";
 		qBIS11.items[19] = "I am a steady thinker.";

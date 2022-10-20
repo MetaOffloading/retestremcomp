@@ -26,7 +26,9 @@
 package com.sam.webtasks.client;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
+import com.google.gwt.user.client.Random;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -74,6 +76,7 @@ public class SequenceHandler {
 			//break;
 			case 1:
 				ClickPage.Run(Instructions.Get(0), "Next");
+				SetQuestOrder.Run();
 				break;
 			case 2:
 				ClickPage.Run(Instructions.Get(1), "Next");
@@ -108,7 +111,7 @@ public class SequenceHandler {
 			case 7:
 				IOtask2Block block3 = new IOtask2Block();
 				
-				block3.nTargets = 7;
+				block3.nTargets = 6;
 				block3.totalCircles = 15;
 				block3.offloadCondition = Names.REMINDERS_NOTALLOWED;
 				block3.blockNum = 3;
@@ -128,7 +131,7 @@ public class SequenceHandler {
 			case 11:
 				IOtask2Block block4 = new IOtask2Block();
 				
-				block4.nTargets = 7;
+				block4.nTargets = 6;
 				block4.totalCircles = 15;
 				block4.offloadCondition = Names.REMINDERS_MANDATORY_TARGETONLY;
 				block4.blockNum = 4;
@@ -148,7 +151,7 @@ public class SequenceHandler {
 			case 15:
 				IOtask2Block block5 = new IOtask2Block();
 				
-				block5.nTargets = 7;
+				block5.nTargets = 6;
 				block5.totalCircles = 15;
 				block5.targetValues.add(1);
 				block5.blockNum = 5;
@@ -162,7 +165,7 @@ public class SequenceHandler {
 			case 17:
 				IOtask2Block block6 = new IOtask2Block();
 				
-				block6.nTargets = 7;
+				block6.nTargets = 6;
 				block6.totalCircles = 15;
 				block6.standard24blockprac = true;
 				block6.blockNum = 6;
@@ -180,7 +183,7 @@ public class SequenceHandler {
 				
 				IOtask2Block block7 = new IOtask2Block();
 				
-				block7.nTargets = 7;
+				block7.nTargets = 6;
 				block7.totalCircles = 15;
 				block7.standard16block = true;
 				block7.updateProgressText = true;
@@ -195,37 +198,51 @@ public class SequenceHandler {
 				ClickPage.Run(Instructions.Get(9),  "Next");
 				break;
 			case 21:
-				ProgressBar.Increment();
-				AUDIT.Run();
+				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(0));
 				break;
 			case 22:
-				AES.Run();
+				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(1));
 				break;
 			case 23:
-				SDS.Run();
+				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(2));
 				break;
 			case 24:
-				EAT26.Run();
+				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(3));
 				break;
 			case 25:
-				BIS11.Run();
+				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(4));
 				break;
 			case 26:
-				OCIR.Run();
+				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(5));
 				break;
 			case 27:
-				STAI.Run();
+				ICAR.Run();
 				break;
 			case 28:
-				Schizotypy.Run();
+				ClickPage.Run(Instructions.Get(10), "Next");
 				break;
 			case 29:
-				LSAS1.Run();
+				TimeBlock.Init();
+				TimeBlock.blockDuration=-10;
+				TimeBlock.clockVisible=false;
+				TimeBlock.offloadButtonVisible=false;
+				TimeBlock.targetInstructionInterval = -1;
+				TimeBlock.blockNumber=-1;
+				TimeBlock.Run();
 				break;
 			case 30:
-				LSAS2.Run();
+				ClickPage.Run(Instructions.Get(11), "Next");
 				break;
 			case 31:
+				TimeBlock.Init();
+				TimeBlock.blockDuration=-50;
+				TimeBlock.clockVisible=false;
+				TimeBlock.offloadButtonVisible=false;
+				TimeBlock.targetInstructionInterval = -1;
+				TimeBlock.blockNumber=-1;
+				TimeBlock.Run();
+				break;
+			case 32:
 				ProgressBar.Hide();
 				
 				// log data and check that it saves
@@ -238,8 +255,8 @@ public class SequenceHandler {
 				PHP.UpdateStatus("finished");
 				PHP.logData("finish", data, true);
 				break;
-			case 32:
-				ClickPage.Run(Instructions.Get(10), "nobutton");
+			case 33:
+				ClickPage.Run(Instructions.Get(12), "nobutton");
 				break;
 			}
 			break;
@@ -278,17 +295,18 @@ public class SequenceHandler {
 				CheckScreenSize.Run(SessionInfo.minScreenSize, SessionInfo.minScreenSize);
 				break;
 			case 6:
-				//if (SessionInfo.runInfoConsentPages) { 
-					//InfoSheet.Run(Instructions.InfoText());
-				//} else {
+				if (SessionInfo.runInfoConsentPages) { 
+					InfoSheet.Run(Instructions.InfoText());
+				} else {
 					SequenceHandler.Next();
-				//}
+				}
 				break;
 			case 7:
-				////	Consent.Run();
-				//} else {
+				if (SessionInfo.runInfoConsentPages) { 
+					Consent.Run();
+				} else {
 					SequenceHandler.Next();
-				//}
+				}
 				break;
 			case 8:
 				//record the participant's counterbalancing condition in the status table				

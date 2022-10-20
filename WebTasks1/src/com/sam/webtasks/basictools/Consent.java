@@ -43,6 +43,7 @@ public class Consent {
         final VerticalPanel namePanel = new VerticalPanel();
         final VerticalPanel emailPanel = new VerticalPanel();
         final VerticalPanel agePanel = new VerticalPanel();
+        final VerticalPanel eduPanel = new VerticalPanel();
         final VerticalPanel genderPanel = new VerticalPanel();
         final HorizontalPanel buttonPanel = new HorizontalPanel();
         final Button backButton = new Button("Go back to information page");
@@ -53,6 +54,11 @@ public class Consent {
         final RadioButton maleRadioButton = new RadioButton("gender", "male");
         final RadioButton femaleRadioButton = new RadioButton("gender", "female");
         final RadioButton otherRadioButton = new RadioButton("gender", "prefer to self-describe:");
+        final TextBox eduBox = new TextBox();
+        final Label eduBoxLabel = new Label("How many years of formal education have you completed? For example: nursery/elemetary school, secondary/high school, college, graduate studies, vocational training...");
+        
+        
+        		
         final TextBox genderBox = new TextBox();
         final Label projectTitleText = new Label();
         final HTML approvalHTML = new HTML();
@@ -133,6 +139,9 @@ public class Consent {
         genderPanel.add(femaleRadioButton);
         genderPanel.add(otherRadioButton);
         genderPanel.add(genderBox);
+        
+        eduPanel.add(eduBoxLabel);
+        eduPanel.add(eduBox);
 
         mainPanel.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 
@@ -158,6 +167,7 @@ public class Consent {
         //mainPanel.add(emailPanel);
         mainPanel.add(agePanel);
         mainPanel.add(genderPanel);
+        mainPanel.add(eduPanel);
         mainPanel.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
         mainPanel.add(buttonPanel);
 
@@ -231,8 +241,10 @@ public class Consent {
                 	}
                 	
                     SessionInfo.age = Integer.parseInt(ageBox.getText());
+                    
+                    SessionInfo.edu = Integer.parseInt(eduBox.getText());
                 	
-                    String data=""+SessionInfo.gender+","+SessionInfo.age+","+Counterbalance.getCounterbalancingCell();
+                    String data=""+SessionInfo.gender+","+SessionInfo.age+","+SessionInfo.edu+","+Counterbalance.getCounterbalancingCell();
              
                     RootPanel.get().remove(scrollPanel);
 

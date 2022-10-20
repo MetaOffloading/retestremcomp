@@ -1,5 +1,8 @@
 package com.sam.webtasks.client;
 
+import java.util.Collections;
+
+import com.google.gwt.user.client.Random;
 import com.sam.webtasks.basictools.Names;
 
 public class SessionInfo {
@@ -41,8 +44,7 @@ public class SessionInfo {
 	//NB levels range from 0 to (maximum - 1)
 	public static String[] counterbalanceFactors = {"counterbtargetvals"};
 	public static int[] counterbalanceLevels = {2};
-	//public static int[] specifiedLevels = {-1};
-	public static int[] specifiedLevels = {1}; // collect remaining datasets, second counterbalancing condition
+	public static int[] specifiedLevels = {-1};
 	
 	/*************************************************/
     /* no need to edit the settings below this point */
@@ -56,6 +58,7 @@ public class SessionInfo {
 	public static int resumePoints=0;        //if we are scoring points, what number of points should we resume from?
 	public static int gender;
 	public static int age;
+	public static int edu;
 	public static String participantID;
 	public static String sessionKey="";      //use this to store a random session key
 	public static String rewardCode="";      //reward code to be revealed at end, in order to participant to claim paymen

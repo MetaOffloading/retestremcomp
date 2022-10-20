@@ -138,6 +138,19 @@ public class Instructions {
 					+ "Please start the questionnaire when you are ready.";
 			break;
         case 10:
+        	i="In this task you will see a sequence of letters, one by one.<br><br>If the letter "
+					+ "matches the one you saw three letters ago, please press the <b>X</b> key. "
+					+ "Otherwise, press the <b>Z</b> key.<br><br>For example, if you saw the sequence "
+					+ "O A S O P, you would press Z Z Z X Z.<br><br>Please respond as quickly "
+					+ "and as accurately as possible. You will practice this now.";
+			break;
+        case 11:
+        	i="You will now complete a slightly longer block of this task. Please keep in mind that "
+        	        + "if the letter matches the one you saw three letters ago, you need to press the <b>X</b> key. "
+					+ "Otherwise, press the <b>Z</b> key.<br><br>Please respond as quickly "
+					+ "and as accurately as possible.";
+			break;
+        case 12:
 			i = "You have now completed the experiment. Thank you for taking part.<br><br>"
 					+ "In the present study we tried to understand how people choose to set "
 					+ "reminders. Previous studies have shown that the simple act of "
