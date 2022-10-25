@@ -19,8 +19,11 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.sam.webtasks.basictools.PHP;
+import com.sam.webtasks.timeBasedOffloading.TimeResponse;
 
 public class RunIQ {
+	public static Date trialStart;
+	
 	public static void main(final IQ q) {
 		final RadioButton[][] radioButton = new RadioButton[q.nItems][q.maxOptions];
         final VerticalPanel[][] radioButtonPanel = new VerticalPanel[q.nItems][q.maxOptions];
@@ -87,10 +90,12 @@ public class RunIQ {
             if (q.imagefiles[0][i+q.offset]!="") {
             	IQImageQ.setUrl(q.imagefiles[0][i+q.offset]);
             	itemPanel[i].add(IQImageQ);
+            	IQImageQ.setPixelSize(IQImageQ.getWidth()/5*4, IQImageQ.getHeight()/5*4);
             }
             if (q.imagefiles[1][i+q.offset]!="") {
             	IQImageA.setUrl(q.imagefiles[1][i+q.offset]);
             	itemPanel[i].add(IQImageA);
+            	IQImageA.setPixelSize(IQImageA.getWidth()/5*4, IQImageA.getHeight()/5*4);
             }
             
             
@@ -157,7 +162,7 @@ public class RunIQ {
         
         RootPanel.get().add(centeringPanel);
         
-        final Date trialStart = new Date();
+        RunIQ.trialStart = new Date();
         
 
  
@@ -182,8 +187,7 @@ public class RunIQ {
             public void onClick(ClickEvent event) {
                 int emptyResponse = 0;  
                 
-                final Date endTime = new Date();
-                q.rt[q.offset] = (int) (endTime.getTime() - trialStart.getTime());
+                q.rt[q.offset] = (int) (new Date().getTime() - trialStart.getTime());
 
                 Image IQImageQ = new Image();
                 Image IQImageA = new Image();
@@ -222,11 +226,11 @@ public class RunIQ {
                     if ((q.offset+q.itemsPerPage)<q.nItems) {
                         q.offset+=q.itemsPerPage;
                         
-                        for (int i=0;i<q.itemsPerPage;i++) {
-                            if (q.imagefiles[0][i+q.offset]!="") {
-                            	itemPanel[i].add(IQImageQ);
-                            }
-                        }
+//                        for (int i=0;i<q.itemsPerPage;i++) {
+//                            if (q.imagefiles[0][i+q.offset]!="") {
+//                            	itemPanel[i].add(IQImageQ);
+//                            }
+//                        }
                         
                         screenPanel.remove(questionPanel);
                         screenPanel.remove(continueButton);
@@ -253,10 +257,12 @@ public class RunIQ {
                             if (q.imagefiles[0][i+q.offset]!="") {
                             	IQImageQ.setUrl(q.imagefiles[0][i+q.offset]);
                             	itemPanel[i].add(IQImageQ);
+                            	IQImageQ.setPixelSize(IQImageQ.getWidth()/5*4, IQImageQ.getHeight()/5*4);
                             }
                             if (q.imagefiles[1][i+q.offset]!="") {
                             	IQImageA.setUrl(q.imagefiles[1][i+q.offset]);
                             	itemPanel[i].add(IQImageA);
+                            	IQImageA.setPixelSize(IQImageA.getWidth()/5*4, IQImageA.getHeight()/5*4);
                             }
                             
                             int nOptions = 0;
@@ -293,7 +299,7 @@ public class RunIQ {
                         screenPanel.add(questionPanel);
                         screenPanel.add(continueButton);
                         
-                        final Date trialStart = new Date();
+                        RunIQ.trialStart = new Date();
                         
                         
                         for (int i=0; i<q.itemsPerPage; i++) {

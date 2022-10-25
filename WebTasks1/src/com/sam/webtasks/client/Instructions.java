@@ -18,10 +18,10 @@ public class Instructions {
                     + "<br><br>Please close any programs "
                     + "that could cause distraction (e.g. email clients) and "
                     + "maximise the size of this window.<br><br>This experiment will take "
-                    + "approximately 20 minutes. Please only continue when you think "
-                    + "you will be free from distractions for the next 20 minutes.<br><br>"
+                    + "approximately 35 minutes. Please only continue when you think "
+                    + "you will be free from distractions for the next 35 minutes.<br><br>"
                     + "As compensation for completing "
-                    + "this experiment, you will receive £2.25 via the Prolific "
+                    + "this experiment, you will receive £5.50 via the Prolific "
                     + "system.<br><br>You may withdraw at any time without penalty, simply by "
                     + "closing your browser window. If you are having difficulty "
                     + "running the experiment we recommend that you try using Google "
@@ -29,7 +29,7 @@ public class Instructions {
                     + "systems and we apologise if you are not able to take part.";
             break;
         case 1:
-        	i="In this part of the experiment you will have a simple task to do.<br><br>"
+        	i="In this first part of four, you will have a simple task to do.<br><br>"
                     + "You will see several yellow circles inside a box. "
                     + "Inside each circle will be a number. <br><br>"
                     + "You can move them around using your mouse, or drag them with your finger if "
@@ -60,7 +60,7 @@ public class Instructions {
             break;
         case 3:
 			i = "Well done. Now it will get more difficult.<br><br>There will be a total of 15 "
-	        			+ "circles and 7 of them will be special ones that should go to one of the "
+	        			+ "circles and 6 of them will be special ones that should go to one of the "
 	        			+ "coloured sides of the box.<br><br> "
 	        			+ "Don't worry if you do not remember all of them. That's fine - "
 	        			+ "just try to remember as many as you can.<br><br>"
@@ -85,7 +85,7 @@ public class Instructions {
         case 6:
         	i = "From now on, you will score points every time you drag one of the special circles "  
 					+ "to the correct border.<br><br>You should try to score as many points as you can.<br><br>"
-					+ "The top 50% of participants will receive an additional bonus payment of £0.50.<br><br>";
+					+ "The top 50% of participants will receive an additional bonus payment of £1.<br><br>";
         	break;
         case 61:
         	i = "Each time you do the task, you will have a choice between two options. One option will be to "
@@ -108,7 +108,7 @@ public class Instructions {
         			+ "but it will always be less than 10. You will always be told exactly "
         			+ "how many points the special circles are worth, before you make your choice.<br><br>"
         			+ "Please make your decisions carefully to make sure you score as many points as possible. This "
-        			+ "will give you the best chance to earn the additional £0.50 bonus payment.<br><br>"
+        			+ "will give you the best chance to earn the additional £1 bonus payment.<br><br>"
         			+ "Click below for some more practice.";
         	break;
         case 7:
@@ -132,25 +132,31 @@ public class Instructions {
                     + "You can start the main experiment when you are ready.";
             break;
         case 9:
-			i = "You have now completed the experimental blocks, thank you. "
-					+ "In the last part, we ask you to complete a "
-					+ "brief questionnaire.<br><br>"
-					+ "Please start the questionnaire when you are ready.";
+			i = "You have now completed the first part of four, thank you. The remaining parts "
+			        + "are much shorter. In the second part, we ask you to complete several "
+					+ "brief questionnaires.<br><br>"
+					+ "Please start the first questionnaire when you are ready.";
 			break;
         case 10:
-        	i="In this task you will see a sequence of letters, one by one.<br><br>If the letter "
+        	i = "You have now completed the second part of four, thank you. "
+        	        + "In the third part, we ask you to complete a short reasoning test.<br><br>"
+					+ "Please start when you are ready.";
+        	break;
+        case 11:
+        	i = "You have now completed the third part of four, thank you. "
+        	        + "In the fourth and last part, you will see a sequence of letters, one by one.<br><br>If the letter "
 					+ "matches the one you saw three letters ago, please press the <b>X</b> key. "
 					+ "Otherwise, press the <b>Z</b> key.<br><br>For example, if you saw the sequence "
 					+ "O A S O P, you would press Z Z Z X Z.<br><br>Please respond as quickly "
 					+ "and as accurately as possible. You will practice this now.";
 			break;
-        case 11:
+        case 12:
         	i="You will now complete a slightly longer block of this task. Please keep in mind that "
         	        + "if the letter matches the one you saw three letters ago, you need to press the <b>X</b> key. "
 					+ "Otherwise, press the <b>Z</b> key.<br><br>Please respond as quickly "
 					+ "and as accurately as possible.";
 			break;
-        case 12:
+        case 13:
 			i = "You have now completed the experiment. Thank you for taking part.<br><br>"
 					+ "In the present study we tried to understand how people choose to set "
 					+ "reminders. Previous studies have shown that the simple act of "
@@ -182,7 +188,7 @@ public class Instructions {
                 + "particular numbers and move the corresponding circle in a particular direction. You will be asked how "
                 + "confident you are in your ability to solve the task. "
                 + "The experiment "
-                + "will last approximately 20 minutes and you will receive a payment of £2.25 via the "
+                + "will last approximately 35 minutes and you will receive a payment of £5.50 via the "
                 + "Prolific payment system. There are no anticipated risks or "
                 + "benefits associated with participation in this study.<br><br>"
                 + "It is up to you to decide whether or not to take part. If you choose "

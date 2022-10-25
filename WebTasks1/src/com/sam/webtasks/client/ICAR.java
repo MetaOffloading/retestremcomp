@@ -17,7 +17,7 @@ public class ICAR {
 
 		//This is the instruction given to the participant above the questionnaire. NB you
 		//can include line breaks with the HTML code "<br"
-		qICAR.instructionText = "You will now proceed to complete a short IQ test.<br><br>Please read each question carefully and "
+		qICAR.instructionText = "You will now proceed to complete a short reasoning test.<br><br>Please read each question carefully and "
 				+ "answer as best as you can.";
 
 		//How many response options does the questionnaire have?
@@ -58,7 +58,6 @@ public class ICAR {
 		qICAR.options[3][0] = "5";
 		qICAR.options[4][0] = "6";
 		qICAR.options[5][0] = "7";
-		qICAR.imagefiles[0][0] = "mx45_q.png";
 		qICAR.items[1] = "2. Zach is taller than Matt and Richard is shorter than Zach.<br>Which of the following statements would be the most accurate?";
 		qICAR.options[0][1] = "Richard is taller than Matt";
 		qICAR.options[1][1] = "Richard is shorter than Matt";

@@ -21,7 +21,9 @@ public class AES_short {
 				+ "are given on the following pages.<br><br>Read each statement and then click the "
 				+ "appropriate answer to indicate how you GENERALLY feel. There are no right or "
 				+ "wrong answers.<br><br>Do not spend too much time on any one statement, but give "
-				+ "the answer which seems to describe your present feelings best.";
+				+ "the answer which seems to describe your present feelings best.<br><br>"
+				+ "Where it asks for <i>instances</i>, please think of how many examples you can think of "
+				+ "within a 24 hour period.";
 
 		//How many response options does the questionnaire have?
 		qAES_short.maxOptions = 4;

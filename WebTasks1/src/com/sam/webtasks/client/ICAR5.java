@@ -58,7 +58,6 @@ public class ICAR5 {
 		qICAR5.options[3][0] = "5";
 		qICAR5.options[4][0] = "6";
 		qICAR5.options[5][0] = "7";
-		qICAR5.imagefiles[0][0] = "mx45_q.png";
 		qICAR5.items[1] = "2. If the day after tomorrow is two days before Thursday then what day is it today?";
 		qICAR5.options[0][1] = "Friday";
 		qICAR5.options[1][1] = "Monday";

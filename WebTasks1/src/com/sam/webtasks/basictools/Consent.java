@@ -55,7 +55,10 @@ public class Consent {
         final RadioButton femaleRadioButton = new RadioButton("gender", "female");
         final RadioButton otherRadioButton = new RadioButton("gender", "prefer to self-describe:");
         final TextBox eduBox = new TextBox();
-        final Label eduBoxLabel = new Label("How many years of formal education have you completed? For example: nursery/elemetary school, secondary/high school, college, graduate studies, vocational training...");
+        final Label eduBoxLabel = new Label("How many years of formal education have you completed? "
+        		                          + "For example: years spent in nursery/elemetary school, secondary/high school, "
+        		                          + "college, graduate studies, vocational training etc. If you are "
+        		                          + "still in education, please count the years up until now.");
         
         
         		
