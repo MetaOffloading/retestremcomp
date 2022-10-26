@@ -54,7 +54,7 @@ public class RunIQ {
         }
 
     	for (int o=0; o<q.maxOptions; o++) {
-			optionHTML[o].setHTML("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+			//optionHTML[o].setHTML("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 		}
         
         optionPanel.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
@@ -88,11 +88,13 @@ public class RunIQ {
             itemPanel[i].add(itemHTML[i]);
             
             if (q.imagefiles[0][i+q.offset]!="") {
+            	Window.alert(q.imagefiles[0][i+q.offset]+"");
             	IQImageQ.setUrl(q.imagefiles[0][i+q.offset]);
             	itemPanel[i].add(IQImageQ);
             	IQImageQ.setPixelSize(IQImageQ.getWidth()/5*4, IQImageQ.getHeight()/5*4);
             }
             if (q.imagefiles[1][i+q.offset]!="") {
+            	Window.alert(q.imagefiles[1][i+q.offset]);
             	IQImageA.setUrl(q.imagefiles[1][i+q.offset]);
             	itemPanel[i].add(IQImageA);
             	IQImageA.setPixelSize(IQImageA.getWidth()/5*4, IQImageA.getHeight()/5*4);
@@ -256,13 +258,26 @@ public class RunIQ {
                             
                             if (q.imagefiles[0][i+q.offset]!="") {
                             	IQImageQ.setUrl(q.imagefiles[0][i+q.offset]);
+                            	
                             	itemPanel[i].add(IQImageQ);
-                            	IQImageQ.setPixelSize(IQImageQ.getWidth()/5*4, IQImageQ.getHeight()/5*4);
+                            	
+                            	/*
+                            	IQImageQ.addLoadHandler(new LoadHandler() {
+                        			public void onLoad(LoadEvent event) {
+                        				IQImageQ.setPixelSize(IQImageQ.getWidth()/5*4, IQImageQ.getHeight()/5*4);
+                        			}
+                            	});*/
                             }
                             if (q.imagefiles[1][i+q.offset]!="") {
                             	IQImageA.setUrl(q.imagefiles[1][i+q.offset]);
                             	itemPanel[i].add(IQImageA);
-                            	IQImageA.setPixelSize(IQImageA.getWidth()/5*4, IQImageA.getHeight()/5*4);
+                            	
+                            	/*
+                            	IQImageA.addLoadHandler(new LoadHandler() {
+                        			public void onLoad(LoadEvent event) {
+                        				IQImageA.setPixelSize(IQImageA.getWidth()/5*4, IQImageA.getHeight()/5*4);
+                        			}
+                            	});*/
                             }
                             
                             int nOptions = 0;

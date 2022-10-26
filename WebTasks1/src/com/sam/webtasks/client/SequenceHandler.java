@@ -75,8 +75,10 @@ public class SequenceHandler {
 			//PHP.logData("start", startdata, true);
 			//break;
 			case 1:
-				ClickPage.Run(Instructions.Get(0), "Next");
-				SetQuestOrder.Run();
+				SequenceHandler.SetPosition(27);
+				SequenceHandler.Next();
+				//ClickPage.Run(Instructions.Get(0), "Next");
+				//SetQuestOrder.Run();
 				break;
 			case 2:
 				ClickPage.Run(Instructions.Get(1), "Next");
