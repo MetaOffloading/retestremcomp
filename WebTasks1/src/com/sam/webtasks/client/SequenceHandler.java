@@ -75,10 +75,13 @@ public class SequenceHandler {
 			//PHP.logData("start", startdata, true);
 			//break;
 			case 1:
-				SequenceHandler.SetPosition(27);
-				SequenceHandler.Next();
-				//ClickPage.Run(Instructions.Get(0), "Next");
-				//SetQuestOrder.Run();
+//				ProgressBar.Initialise();
+//				ProgressBar.Show();
+//				ProgressBar.SetProgress(0, 24);
+//				SequenceHandler.SetPosition(29);
+//				SequenceHandler.Next();
+				ClickPage.Run(Instructions.Get(0), "Next");
+				SetQuestOrder.Run();
 				break;
 			case 2:
 				ClickPage.Run(Instructions.Get(1), "Next");
@@ -227,13 +230,15 @@ public class SequenceHandler {
 				ClickPage.Run(Instructions.Get(10),  "Next");
 				break;
 			case 28:
-				ICAR.Run();
+				ICAR5.Run();
 				break;
 			case 29:
 				ProgressBar.Increment();
-				ClickPage.Run(Instructions.Get(11), "Next");
 				break;
 			case 30:
+				ClickPage.Run(Instructions.Get(11), "Next");
+				break;
+			case 31:
 				TimeBlock.Init();
 				TimeBlock.blockDuration=-10;
 				TimeBlock.clockVisible=false;
@@ -242,10 +247,16 @@ public class SequenceHandler {
 				TimeBlock.blockNumber=-1;
 				TimeBlock.Run();
 				break;
-			case 31:
-				ClickPage.Run(Instructions.Get(12), "Next");
-				break;
 			case 32:
+				if ((TimeBlock.nBackNonMatchCorr==0)|(TimeBlock.nBackMatchCorr==0)) {
+					SequenceHandler.SetPosition(SequenceHandler.GetPosition()-3);
+					
+					ClickPage.Run("Your accuracy was too low", "Try again");
+				} else {
+					ClickPage.Run(Instructions.Get(12), "Next");
+				}
+				break;
+			case 33:
 				TimeBlock.Init();
 				TimeBlock.blockDuration=-100;
 				TimeBlock.clockVisible=false;
@@ -254,7 +265,7 @@ public class SequenceHandler {
 				TimeBlock.blockNumber=-1;
 				TimeBlock.Run();
 				break;
-			case 33:
+			case 34:
 				
 				// log data and check that it saves
 				String data = TimeStamp.Now() + ",";
@@ -266,7 +277,7 @@ public class SequenceHandler {
 				PHP.UpdateStatus("finished");
 				PHP.logData("finish", data, true);
 				break;
-			case 34:
+			case 35:
 				ProgressBar.Increment();
 				ClickPage.Run(Instructions.Get(13), "nobutton");
 				break;

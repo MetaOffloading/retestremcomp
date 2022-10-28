@@ -96,7 +96,7 @@ public class TimeResponse {
 			
 			boolean nBackCorrect = false;
 			
-			if (TimeDisplay.stimulus == TimeDisplay.stimulus_3back) {
+			if (TimeDisplay.stimulus == TimeDisplay.stimulus_2back) {
 				if (response == TimeBlock.matchKey) {
 					nBackCorrect = true;
 					TimeBlock.nBackMatchCorr++;
@@ -111,7 +111,7 @@ public class TimeResponse {
 			String data = TimeBlock.blockNumber + "," + TimeBlock.offloadButtonVisible + ",";
 			data = data + TimeBlock.trialNumber + "," + TimeDisplay.stimulus + ",";
 			data = data + response + "," + RT + ",";
-			data = data + TimeDisplay.awaitingPMresponse + "," + (TimeDisplay.stimulus == TimeDisplay.stimulus_3back) + ",";
+			data = data + TimeDisplay.awaitingPMresponse + "," + (TimeDisplay.stimulus == TimeDisplay.stimulus_2back) + ",";
 			data = data + nBackCorrect + "," + TimeBlock.nextTarget + "," + TimeBlock.currentTime + ",";
 			data = data + TimeStamp.Now();
 			

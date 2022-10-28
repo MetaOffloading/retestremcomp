@@ -39,7 +39,7 @@ public class TimeDisplay {
 	public static String displayWidth="80%";
 	
 	/*------------stimulus------------*/
-	public static int stimulus = -1, stimulus_1back = -1, stimulus_2back = -1, stimulus_3back = -1;
+	public static int stimulus = -1, stimulus_1back = -1, stimulus_2back = -1;
 	
 	/*------------GWT display objects------------*/
 	
@@ -233,7 +233,6 @@ public class TimeDisplay {
 				stimulus=Random.nextInt(26);
 				stimulus_1back=Random.nextInt(26);
 				stimulus_2back=Random.nextInt(26);
-				stimulus_3back=Random.nextInt(26);
 				
 				if (stimulus==stimulus_1back) {
 					notvalid=true;
@@ -242,11 +241,6 @@ public class TimeDisplay {
 				if (stimulus_1back==stimulus_2back) {
 					notvalid=true;
 				}
-				
-				if (stimulus_2back==stimulus_3back) {
-					notvalid=true;
-				}
-				
 			}
 		}
 
@@ -254,7 +248,7 @@ public class TimeDisplay {
 		
 		notvalid=true;
 		
-		if (Math.random() > TimeBlock.nBackTargetProb) { //3-back nontarget
+		if (Math.random() > TimeBlock.nBackTargetProb) { //2-back nontarget
 			while (notvalid) {
 				notvalid=false;
 				
@@ -271,23 +265,18 @@ public class TimeDisplay {
 				if (newStimulus == stimulus_2back) {
 					notvalid=true;
 				}
-				
-				if (newStimulus == stimulus_3back) {
-					notvalid=true;
-				}
 			}
-		} else { //3-back target
-			newStimulus = stimulus_2back;
+		} else { //2-back target
+			newStimulus = stimulus_1back;
 			TimeBlock.nBackTargetsPresented++;
 		}
 		
 		//present a target if this is the last trial and there have not been any yet
 		if ((TimeBlock.nBackTargetsPresented==0)&(TimeBlock.trialNumber == (-TimeBlock.blockDuration)-1)) {
-			newStimulus = stimulus_2back;
+			newStimulus = stimulus_1back;
 			TimeBlock.nBackTargetsPresented++;
 		}
 		
-		stimulus_3back=stimulus_2back;
 		stimulus_2back=stimulus_1back;
 		stimulus_1back=stimulus;
 		stimulus=newStimulus;

@@ -18,6 +18,7 @@ import com.google.gwt.user.client.ui.RadioButton;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.ScrollPanel;
 import com.sam.webtasks.basictools.PHP;
 import com.sam.webtasks.timeBasedOffloading.TimeResponse;
 
@@ -38,6 +39,7 @@ public class RunIQ {
         final HorizontalPanel centeringPanel = new HorizontalPanel();
 
         final HTML instructHTML = new HTML(q.instructionText);
+        final ScrollPanel scrollPanel = new ScrollPanel();
         
         
         Image IQImageQ = new Image();
@@ -147,7 +149,6 @@ public class RunIQ {
         screenPanel.add(questionPanel);
         
         
-        
         final Button continueButton = new Button("Continue");
         
         continueButton.addStyleName("topMarginSmall");
@@ -161,8 +162,9 @@ public class RunIQ {
         centeringPanel.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
         
         centeringPanel.add(screenPanel);
-        
-        RootPanel.get().add(centeringPanel);
+        scrollPanel.add(centeringPanel);
+        scrollPanel.setHeight(Window.getClientHeight() + "px");
+        RootPanel.get().add(scrollPanel);
         
         RunIQ.trialStart = new Date();
         
@@ -343,7 +345,7 @@ public class RunIQ {
                             }
                         }
                     } else {
-                        RootPanel.get().remove(centeringPanel);
+                        RootPanel.get().remove(scrollPanel);
                         
                         //output data
 

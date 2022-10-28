@@ -17,7 +17,7 @@ public class ICAR5 {
 
 		//This is the instruction given to the participant above the questionnaire. NB you
 		//can include line breaks with the HTML code "<br"
-		qICAR5.instructionText = "You will now proceed to complete a short IQ test.<br><br>Please read each question carefully and "
+		qICAR5.instructionText = "You will now proceed to complete a short reasoning test.<br><br>Please read each question carefully and "
 				+ "answer as best as you can.";
 
 		//How many response options does the questionnaire have?
