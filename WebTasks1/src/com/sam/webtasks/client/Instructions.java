@@ -145,14 +145,14 @@ public class Instructions {
         case 11:
         	i = "You have now completed the third part of four, thank you. "
         	        + "In the fourth and last part, you will see a sequence of letters, one by one.<br><br>If the letter "
-					+ "matches the one you saw three letters ago, please press the <b>X</b> key. "
+					+ "matches the one you saw two letters ago, please press the <b>X</b> key. "
 					+ "Otherwise, press the <b>Z</b> key.<br><br>For example, if you saw the sequence "
-					+ "O A S O P, you would press Z Z Z X Z.<br><br>Please respond as quickly "
+					+ "O A O S P, you would press Z Z X Z Z.<br><br>Please respond as quickly "
 					+ "and as accurately as possible. You will practice this now.";
 			break;
         case 12:
         	i="You will now complete a slightly longer block of this task. Please keep in mind that "
-        	        + "if the letter matches the one you saw three letters ago, you need to press the <b>X</b> key. "
+        	        + "if the letter matches the one you saw two letters ago, you need to press the <b>X</b> key. "
 					+ "Otherwise, press the <b>Z</b> key.<br><br>Please respond as quickly "
 					+ "and as accurately as possible.";
 			break;

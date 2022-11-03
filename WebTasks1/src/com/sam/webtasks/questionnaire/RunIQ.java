@@ -163,7 +163,7 @@ public class RunIQ {
         
         centeringPanel.add(screenPanel);
         scrollPanel.add(centeringPanel);
-        scrollPanel.setHeight(Window.getClientHeight() + "px");
+        scrollPanel.setHeight(Window.getClientHeight()*0.9 + "px");
         RootPanel.get().add(scrollPanel);
         
         RunIQ.trialStart = new Date();

@@ -78,7 +78,7 @@ public class SequenceHandler {
 //				ProgressBar.Initialise();
 //				ProgressBar.Show();
 //				ProgressBar.SetProgress(0, 24);
-//				SequenceHandler.SetPosition(29);
+//				SequenceHandler.SetPosition(26);
 //				SequenceHandler.Next();
 				ClickPage.Run(Instructions.Get(0), "Next");
 				SetQuestOrder.Run();
@@ -234,6 +234,7 @@ public class SequenceHandler {
 				break;
 			case 29:
 				ProgressBar.Increment();
+				SequenceHandler.Next();
 				break;
 			case 30:
 				ClickPage.Run(Instructions.Get(11), "Next");
