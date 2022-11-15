@@ -80,7 +80,8 @@ public class Instructions {
                     + "different part of the box. For example, if a circle initially appeared in blue, you "
                     + "could immediately drag it next to the blue (left) side of the box. Then, when "
                     + "you get to that circle in the sequence its location would remind you where it is supposed "
-                    + "to go.<br><br>Please now try the task again, using this strategy to help you.";
+                    + "to go.<br><br>Please now try the task again, using this strategy to help you.<br><br>"
+                    + "From now on, there will be no more error feedback.";
             break;
         case 6:
         	i = "From now on, you will score points every time you drag one of the special circles "  

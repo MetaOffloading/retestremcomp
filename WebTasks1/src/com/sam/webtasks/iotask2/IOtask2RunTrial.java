@@ -404,7 +404,9 @@ public class IOtask2RunTrial {
 										IOtask2BlockContext.incrementHits();
 										IOtask2BlockContext.gainLossRemember();
 										IOtask2BlockContext.chargeReminderCost(); //subtract the reminder cost, if appropriate
-										circles[clickedCircle].setFillColor(ColorName.GREENYELLOW);
+										if (IOtask2BlockContext.getShowTargetFeedback()) {
+											circles[clickedCircle].setFillColor(ColorName.GREENYELLOW);
+										}
 
 										if (IOtask2BlockContext.getShowPointLabels()) {
 											if (IOtask2BlockContext.getExitFlag() == 1) {
@@ -428,7 +430,9 @@ public class IOtask2RunTrial {
 											}
 										}
 									} else if (IOtask2BlockContext.getExitFlag() < 4) { // incorrect target response
-										circles[clickedCircle].setFillColor(ColorName.RED);
+										if (IOtask2BlockContext.getShowTargetFeedback()) {
+											circles[clickedCircle].setFillColor(ColorName.RED);
+										}
 										IOtask2BlockContext.decrementPoints();
 										
 										if (IOtask2BlockContext.getTargetSide(circleNum) > 0) { //incorrect respons to target

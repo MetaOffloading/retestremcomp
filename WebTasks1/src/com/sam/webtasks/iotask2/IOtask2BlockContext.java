@@ -55,6 +55,10 @@ public class IOtask2BlockContext {
 		return (blockContext.showPointLabels);
 	}
 	
+	public static boolean getShowTargetFeedback() {
+		return (blockContext.showTargetFeedback);
+	}
+	
 	// find out the amount of money earned
 	public static String getMoneyString() {
 		String money = "";
