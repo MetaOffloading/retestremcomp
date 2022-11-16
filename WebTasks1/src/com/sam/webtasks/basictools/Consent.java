@@ -54,7 +54,7 @@ public class Consent {
         final RadioButton maleRadioButton = new RadioButton("gender", "male");
         final RadioButton femaleRadioButton = new RadioButton("gender", "female");
         final RadioButton otherRadioButton = new RadioButton("gender", "prefer to self-describe:");
-        final Label eduLabel = new Label("What ist the highest level of education you have completed to this date?");
+        final Label eduLabel = new Label("What is the highest level of education you have completed to this date?");
         final RadioButton ISCED0RadioButton = new RadioButton("edu", "Early childhood education or no formal education (e.g. early childhood education and development, play school, reception, pre-primary, pre-school, educación inicial)");
         final RadioButton ISCED1RadioButton = new RadioButton("edu", "Primary education (e.g. primary education, elementary education, basic education; typically ends around age 10 to 12 years)");
         final RadioButton ISCED2RadioButton = new RadioButton("edu", "Lower secondary education (e.g. lower grades of secondary school, junior secondary school, middle school, junior high school)");
