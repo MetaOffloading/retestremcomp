@@ -33,7 +33,7 @@ public class AES_short {
 
 		//What is the maximum number of items to be presented on one page? If the questionnaire
 		//has more than this number, it will be presented on two or more page
-		qAES_short.itemsPerPage = 4;
+		qAES_short.itemsPerPage = 2;
 
 		//What proportion of the screen width should be used for the questions rather than
 		//the response options. This can be adjusted by trial and error if the widths look wrong
