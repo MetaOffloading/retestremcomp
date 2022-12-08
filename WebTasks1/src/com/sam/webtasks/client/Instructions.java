@@ -148,7 +148,8 @@ public class Instructions {
         	        + "In the fourth and last part, you will see a sequence of letters, one by one.<br><br>If the letter "
 					+ "matches the one you saw <b>two letters ago</b>, please press the <b>X</b> key. "
 					+ "Otherwise, press the <b>Z</b> key.<br><br>For example, if you saw the sequence "
-					+ "O A O S P, you would press Z Z X Z Z.<br><br>Please respond as quickly "
+					+ "O A O S P, you would press Z Z X Z Z.<br><br>For the first two letters in the block, you can "
+					+ "also simply press the Z key.<br><br>Please respond as quickly "
 					+ "and as accurately as possible. You will practice this now.";
 			break;
         case 12:
