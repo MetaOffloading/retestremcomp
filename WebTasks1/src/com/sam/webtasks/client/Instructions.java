@@ -18,10 +18,10 @@ public class Instructions {
                     + "<br><br>Please close any programs "
                     + "that could cause distraction (e.g. email clients) and "
                     + "maximise the size of this window.<br><br>This experiment will take "
-                    + "approximately 35 minutes. Please only continue when you think "
-                    + "you will be free from distractions for the next 35 minutes.<br><br>"
+                    + "approximately 20 minutes. Please only continue when you think "
+                    + "you will be free from distractions for the next 20 minutes.<br><br>"
                     + "As compensation for completing "
-                    + "this experiment, you will receive £3.90 via the Prolific "
+                    + "this experiment, you will receive £2.15 via the Prolific "
                     + "system.<br><br>You may withdraw at any time without penalty, simply by "
                     + "closing your browser window. If you are having difficulty "
                     + "running the experiment we recommend that you try using Google "
@@ -67,12 +67,18 @@ public class Instructions {
 	        			+ "Click below to practise the task.";
             break;
         case 4:
+//        	i="Now that you have had some practice with the experiment, we would like you to tell us "
+//                    + "how <b>confident</b> you are that you can accurately perform the task.<br><br>"
+//                    + "Please use the scale below to indicate what percentage of "
+//                    + "the special circles you can correctly drag to the instructed side of the square, on average. 100% "
+//                    + "would mean that you always get every single one correct. 0% would mean that you can never "
+//                    + "get any of them correct.";
         	i="Now that you have had some practice with the experiment, we would like you to tell us "
                     + "how <b>confident</b> you are that you can accurately perform the task.<br><br>"
                     + "Please use the scale below to indicate what percentage of "
                     + "the special circles you can correctly drag to the instructed side of the square, on average. 100% "
                     + "would mean that you always get every single one correct. 0% would mean that you can never "
-                    + "get any of them correct.";
+                    + "get any of them correct. We ask you to make this judgement based on performing this task using your own memory.";        	
             break;
         case 5:
         	i="Now we are going to explain a strategy that can make the task easier.<br><br>"
@@ -86,7 +92,7 @@ public class Instructions {
         case 6:
         	i = "From now on, you will score points every time you drag one of the special circles "  
 					+ "to the correct border.<br><br>You should try to score as many points as you can.<br><br>"
-					+ "The top 50% of participants will receive an additional bonus payment of £1.<br><br>";
+					+ "The top 50% of participants will receive an additional bonus payment of £0.5.<br><br>";
         	break;
         case 61:
         	i = "Each time you do the task, you will have a choice between two options. One option will be to "
@@ -109,7 +115,7 @@ public class Instructions {
         			+ "but it will always be less than 10. You will always be told exactly "
         			+ "how many points the special circles are worth, before you make your choice.<br><br>"
         			+ "Please make your decisions carefully to make sure you score as many points as possible. This "
-        			+ "will give you the best chance to earn the additional £1 bonus payment.<br><br>"
+        			+ "will give you the best chance to earn the additional £0.5 bonus payment.<br><br>"
         			+ "Click below for some more practice.";
         	break;
         case 7:
@@ -159,8 +165,18 @@ public class Instructions {
 					+ "and as accurately as possible.";
 			break;
         case 13:
-			i = "You have now completed the experiment. Thank you for taking part.<br><br>"
-					+ "In the present study we tried to understand how people choose to set "
+//			i = "You have now completed the experiment. Thank you for taking part.<br><br>"
+//					+ "In the present study we tried to understand how people choose to set "
+//					+ "reminders. Previous studies have shown that the simple act of "
+//					+ "using a reminder may improve our memory for subsequent information. "
+//					+ "In this study, we want to study the cognitive mechanisms behind "
+//					+ "this phenomenon. In particular, we are interested in understanding "
+//					+ "how confidence in your own memory might guide your decision to ask for "
+//					+ "a reminder.<br><br>"
+//					+ "Please click on the link below to receive your payment:<br><br>"
+//					+ "<b><a href=\"https://app.prolific.co/submissions/complete?cc=4DC3A396\">"
+//					+ "CLICK HERE</a></b>";
+        	i = "In the present study we tried to understand how people choose to set "
 					+ "reminders. Previous studies have shown that the simple act of "
 					+ "using a reminder may improve our memory for subsequent information. "
 					+ "In this study, we want to study the cognitive mechanisms behind "
@@ -169,7 +185,7 @@ public class Instructions {
 					+ "a reminder.<br><br>"
 					+ "Please click on the link below to receive your payment:<br><br>"
 					+ "<b><a href=\"https://app.prolific.co/submissions/complete?cc=4DC3A396\">"
-					+ "CLICK HERE</a></b>";
+					+ "CLICK HERE</a></b>";        	
 			break;
 		}
 
@@ -190,7 +206,7 @@ public class Instructions {
                 + "particular numbers and move the corresponding circle in a particular direction. You will be asked how "
                 + "confident you are in your ability to solve the task. "
                 + "The experiment "
-                + "will last approximately 35 minutes and you will receive a payment of £3.90 via the "
+                + "will last approximately 20 minutes and you will receive a payment of £2.15 via the "
                 + "Prolific payment system. There are no anticipated risks or "
                 + "benefits associated with participation in this study.<br><br>"
                 + "It is up to you to decide whether or not to take part. If you choose "

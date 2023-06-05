@@ -37,6 +37,7 @@ import com.sam.webtasks.basictools.CheckScreenSize;
 import com.sam.webtasks.basictools.ClickPage;
 import com.sam.webtasks.basictools.Consent;
 import com.sam.webtasks.basictools.Counterbalance;
+import com.sam.webtasks.basictools.EndFeedback;
 import com.sam.webtasks.basictools.InfoSheet;
 import com.sam.webtasks.basictools.Initialise;
 import com.sam.webtasks.basictools.Names;
@@ -78,7 +79,7 @@ public class SequenceHandler {
 //				ProgressBar.Initialise();
 //				ProgressBar.Show();
 //				ProgressBar.SetProgress(0, 24);
-//				SequenceHandler.SetPosition(26);
+//				SequenceHandler.SetPosition(20);
 //				SequenceHandler.Next();
 				ClickPage.Run(Instructions.Get(0), "Next");
 				SetQuestOrder.Run();
@@ -187,7 +188,7 @@ public class SequenceHandler {
 			case 19:
 				ProgressBar.Initialise();
 				ProgressBar.Show();
-				ProgressBar.SetProgress(0, 24);
+				ProgressBar.SetProgress(0, 16);
 				
 				IOtask2Block block7 = new IOtask2Block();
 				
@@ -203,74 +204,74 @@ public class SequenceHandler {
 				
 				block7.Run();
 				break;
+//			case 20:
+//				ClickPage.Run(Instructions.Get(9),  "Next");
+//				break;
+//			case 21:
+//				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(0));
+//				break;
+//			case 22:
+//				ProgressBar.Increment();
+//				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(1));
+//				break;
+//			case 23:
+//				ProgressBar.Increment();
+//				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(2));
+//				break;
+//			case 24:
+//				ProgressBar.Increment();
+//				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(3));
+//				break;
+//			case 25:
+//				ProgressBar.Increment();
+//				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(4));
+//				break;
+//			case 26:
+//				ProgressBar.Increment();
+//				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(5));
+//				break;
+//			case 27:
+//				ProgressBar.Increment();
+//				ClickPage.Run(Instructions.Get(10),  "Next");
+//				break;
+//			case 28:
+//				ICAR5.Run();
+//				break;
+//			case 29:
+//				ProgressBar.Increment();
+//				SequenceHandler.Next();
+//				break;
+//			case 30:
+//				ClickPage.Run(Instructions.Get(11), "Next");
+//				break;
+//			case 31:
+//				TimeBlock.Init();
+//				TimeBlock.blockDuration=-10;
+//				TimeBlock.clockVisible=false;
+//				TimeBlock.offloadButtonVisible=false;
+//				TimeBlock.targetInstructionInterval = -1;
+//				TimeBlock.blockNumber=-1;
+//				TimeBlock.Run();
+//				break;
+//			case 32:
+//				if ((TimeBlock.nBackNonMatchCorr==0)|(TimeBlock.nBackMatchCorr==0)) {
+//					SequenceHandler.SetPosition(SequenceHandler.GetPosition()-3);
+//					
+//					ClickPage.Run("Your accuracy was too low", "Try again");
+//				} else {
+//					ClickPage.Run(Instructions.Get(12), "Next");
+//				}
+//				break;
+//			case 33:
+//				TimeBlock.Init();
+//				TimeBlock.blockDuration=-100;
+//				TimeBlock.clockVisible=false;
+//				TimeBlock.offloadButtonVisible=false;
+//				TimeBlock.targetInstructionInterval = -1;
+//				TimeBlock.blockNumber=-1;
+//				TimeBlock.Run();
+//				break;
 			case 20:
-				ClickPage.Run(Instructions.Get(9),  "Next");
-				break;
-			case 21:
-				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(0));
-				break;
-			case 22:
-				ProgressBar.Increment();
-				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(1));
-				break;
-			case 23:
-				ProgressBar.Increment();
-				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(2));
-				break;
-			case 24:
-				ProgressBar.Increment();
-				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(3));
-				break;
-			case 25:
-				ProgressBar.Increment();
-				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(4));
-				break;
-			case 26:
-				ProgressBar.Increment();
-				RunNextQuestionnaire.Run(SetQuestOrder.questOrder.get(5));
-				break;
-			case 27:
-				ProgressBar.Increment();
-				ClickPage.Run(Instructions.Get(10),  "Next");
-				break;
-			case 28:
-				ICAR5.Run();
-				break;
-			case 29:
-				ProgressBar.Increment();
-				SequenceHandler.Next();
-				break;
-			case 30:
-				ClickPage.Run(Instructions.Get(11), "Next");
-				break;
-			case 31:
-				TimeBlock.Init();
-				TimeBlock.blockDuration=-10;
-				TimeBlock.clockVisible=false;
-				TimeBlock.offloadButtonVisible=false;
-				TimeBlock.targetInstructionInterval = -1;
-				TimeBlock.blockNumber=-1;
-				TimeBlock.Run();
-				break;
-			case 32:
-				if ((TimeBlock.nBackNonMatchCorr==0)|(TimeBlock.nBackMatchCorr==0)) {
-					SequenceHandler.SetPosition(SequenceHandler.GetPosition()-3);
-					
-					ClickPage.Run("Your accuracy was too low", "Try again");
-				} else {
-					ClickPage.Run(Instructions.Get(12), "Next");
-				}
-				break;
-			case 33:
-				TimeBlock.Init();
-				TimeBlock.blockDuration=-100;
-				TimeBlock.clockVisible=false;
-				TimeBlock.offloadButtonVisible=false;
-				TimeBlock.targetInstructionInterval = -1;
-				TimeBlock.blockNumber=-1;
-				TimeBlock.Run();
-				break;
-			case 34:
 				
 				// log data and check that it saves
 				String data = TimeStamp.Now() + ",";
@@ -282,13 +283,19 @@ public class SequenceHandler {
 				PHP.UpdateStatus("finished");
 				PHP.logData("finish", data, true);
 				break;
-			case 35:
+			case 21:
 				ProgressBar.Increment();
+				break;
+			case 22:
+				EndFeedback.Run();
+				break;
+			case 23:
 				ClickPage.Run(Instructions.Get(13), "nobutton");
 				break;
 			}
 			break;
 
+			
 		/********************************************/
 		/* no need to edit the code below this line */
 		/********************************************/
