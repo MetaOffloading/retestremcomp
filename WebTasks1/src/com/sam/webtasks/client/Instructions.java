@@ -29,7 +29,7 @@ public class Instructions {
                     + "systems and we apologise if you are not able to take part.";
             break;
         case 1:
-        	i="In this first part of four, you will have a simple task to do.<br><br>"
+        	i="In this experiment, you will have a simple task to do.<br><br>"
                     + "You will see several yellow circles inside a box. "
                     + "Inside each circle will be a number. <br><br>"
                     + "You can move them around using your mouse, or drag them with your finger if "
